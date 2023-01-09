@@ -20,19 +20,22 @@
     "incremental": true,
     "paths": {
       "@modules/*": [
-        "src/modules/*"
+        "./src/modules/*"
+      ],
+      "@data/*": [
+        "./src/data/*"
       ],
       "@pages/*": [
-        "src/pages/*"
+        "./src/pages/*"
       ],
       "@utils/*": [
-        "src/utils/*"
+        "./src/utils/*"
       ],
       "@styles/*": [
-        "src/assets/styles/*"
+        "./src/assets/styles/*"
       ],
       "@images/*": [
-        "src/assets/images/*"
+        "./src/assets/images/*"
       ]
     }
   },

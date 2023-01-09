@@ -1,5 +1,8 @@
 :root {
-  --color: red;
+  --main-bg: #F9F9F9;
+  --main-black: #1C1C1C;
+  --white: #fff;
+  --dark-shadow: rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -10,8 +13,19 @@
 
 html,
 body {
-  max-width: 100vw;
+  height: 100%;
   overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--main-bg);
+  color: var(--main-black);
+}
+
+body {
+  max-width: 1730px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 a {

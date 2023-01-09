@@ -1,18 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const LOGO = 'assets/images/logo.svg';
 
-import s from './Logo.module.scss';
-
 const Logo = () => {
 	return (
-		<Image
-			src={LOGO}
-			alt="Logo"
-			width={500}
-			height={500}
-			className={s.container}
-		/>
+		<Link href={'/'}>
+			<Image src={LOGO} alt="Logo" width={680} height={44} />
+		</Link>
 	);
 };
 

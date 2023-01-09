@@ -1,4 +1,5 @@
 // Flex
+
 @mixin flex-align($align-position) {
   display: flex;
   align-items: $align-position;
@@ -15,7 +16,7 @@
   align-items: $align-position;
 }
 
-/* Breakpoint mixins */
+// Breakpoint mixins
 @mixin media-tablet {
   @media (max-width: $tablet-breackpoint) {
     @content;

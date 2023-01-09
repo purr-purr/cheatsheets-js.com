@@ -1,11 +1,9 @@
 import { FC } from 'react';
 
-import s from './Description.module.scss';
-
-const Description: FC<{
+const DescriptionText: FC<{
 	text: string;
 }> = ({ text }) => {
-	return <p className={s.container}>{text}</p>;
+	return <p>{text}</p>;
 };
 
-export default Description;
+export default DescriptionText;

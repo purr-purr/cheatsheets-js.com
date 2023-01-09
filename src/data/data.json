@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "category": "js",
+    "title": "JavaScript",
+    "list": [
+      {
+        "title": "Arrays",
+        "path": "/category/js/#arrays",
+        "icon": "/",
+        "desc": "Arrays desc",
+        "data": [
+          {
+            "subtitle": "Arrays Methods #1",
+            "source": "path link #1"
+          },
+          {
+            "subtitle": "Arrays Methods #2",
+            "source": "path link #2"
+          }
+        ]
+      },
+      {
+        "title": "Numbers",
+        "path": "/category/js/#numbers",
+        "icon": "/",
+        "desc": "Numbers desc",
+        "data": [
+          {
+            "subtitle": "Numbers Methods",
+            "source": "path link"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "react",
+    "title": "React JS",
+    "list": [
+      {
+        "title": "Arrays",
+        "path": "/category/react/#arrays",
+        "icon": "path",
+        "desc": "Arrays desc",
+        "data": [
+          {
+            "subtitle": "Arrays Methods data",
+            "source": "path link"
+          }
+        ]
+      },
+      {
+        "title": "Numbers",
+        "path": "/category/react/#numbers",
+        "icon": "path",
+        "desc": "Numbers desc",
+        "data": [
+          {
+            "subtitle": "Numbers Methods",
+            "source": "path link"
+          }
+        ]
+      }
+    ]
+  }
+]

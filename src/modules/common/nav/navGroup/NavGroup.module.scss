@@ -1,0 +1,9 @@
+.container {
+
+}
+
+.list {
+  @include flex-justify(center);
+  gap: 20px;
+  list-style-type: none;
+}
