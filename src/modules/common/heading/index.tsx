@@ -6,12 +6,16 @@ import s from './Heading.module.scss';
 const Heading: FC<{
 	text: string;
 	isSubTitle?: boolean;
-}> = ({ text, isSubTitle = false }) => {
-	const classNameList = cn(s.container, isSubTitle && s[`container--subTitle`]);
+	idAttr?: string;
+}> = ({ text, isSubTitle = false, idAttr }) => {
+	const classNameList = cn(
+		s.container,
+		isSubTitle ? s[`container--subTitle`] : s[`container--title`],
+	);
 
 	const element = createElement(
 		isSubTitle ? 'h2' : 'h1',
-		{ className: classNameList },
+		{ className: classNameList, id: idAttr },
 		text,
 	);
 	return element;

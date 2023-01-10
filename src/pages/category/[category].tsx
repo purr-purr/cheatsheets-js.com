@@ -1,5 +1,6 @@
-import { FC, Fragment, useEffect, useState } from 'react';
+import { FC, Fragment, memo, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import styled from 'styled-components';
 
 import Heading from '@modules/common/heading';
 import DescriptionText from '@modules/common/descriptionText';
@@ -7,16 +8,23 @@ import Meta from '@modules/common/meta';
 
 import data from '@data/data.json';
 import { ICheatsData } from '@utils/types';
+import { createMetaKeyWords, createTitleMeta } from '@utils/index';
 
-const Category: FC = () => {
+export const CodeFrame = styled.code`
+	display: block;
+	margin-bottom: 24px;
+`;
+
+const Category: FC = memo(() => {
 	const router = useRouter();
 	const { category } = router.query;
-	const [pageData, setPageData] = useState<ICheatsData>({
+
+	const initialState = {
 		category: '',
-		id: 0,
+		_id: 0,
 		list: [
 			{
-				data: [{ source: '', subtitle: '' }],
+				data: [{ _id: 0, source: '', subtitle: '' }],
 				desc: '',
 				icon: '',
 				path: '',
@@ -24,38 +32,67 @@ const Category: FC = () => {
 			},
 		],
 		title: '',
-	});
+		descMeta: '',
+	};
+	const [pageData, setPageData] = useState<ICheatsData>(initialState);
 
 	useEffect(() => {
 		if (!router.isReady) return;
-		data.map(function (item: any) {
-			if (item.category === category) {
-				setPageData(item);
-			}
-		});
+		data.map((item: any) => item.category === category && setPageData(item));
 	}, [router.query.category, router.isReady]);
+
+	const [titlesArr, setTitlesArr] = useState<any[]>([]);
+
+	useEffect(() => {
+		if (pageData._id !== 0) {
+			pageData.list.map(
+				(item: any) =>
+					!titlesArr.includes(item.title) &&
+					setTitlesArr((current) => [...current, item.title]),
+			);
+		}
+	}, [pageData]);
 
 	return (
 		<>
-			<Meta title="Home" desc="Home" />
+			<Meta
+				title={createTitleMeta(pageData.title)}
+				desc={pageData.descMeta}
+				keyWords={createMetaKeyWords(pageData.title, titlesArr)}
+			/>
 
 			<Heading text={pageData.title} />
 
 			{pageData.list.map((item) => (
 				<Fragment key={item.title}>
-					<Heading text={item.title} isSubTitle />
-					<DescriptionText text={item.desc} />
+					<Heading
+						text={item.title}
+						isSubTitle
+						idAttr={`${item.title.toLowerCase()}`}
+					/>
 
-					{item.data.map((subItem) => (
-						<Fragment key={subItem.subtitle}>
-							<div>{subItem.subtitle}</div>
-							<div>{subItem.source}</div>
-						</Fragment>
-					))}
+					{item.desc && <DescriptionText text={item.desc} />}
+
+					{item.data.map((subItem) => {
+						const createMarkup = () => {
+							return {
+								__html: subItem.source,
+							};
+						};
+
+						return (
+							<Fragment key={subItem._id}>
+								{subItem.subtitle && (
+									<Heading text={subItem.subtitle} isSubTitle />
+								)}
+								<CodeFrame dangerouslySetInnerHTML={createMarkup()} />
+							</Fragment>
+						);
+					})}
 				</Fragment>
 			))}
 		</>
 	);
-};
-
+});
+Category.displayName = 'Category';
 export default Category;

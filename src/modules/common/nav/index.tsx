@@ -5,23 +5,30 @@ import NavGroup from '@modules/common/nav/navGroup';
 import data from '@data/data.json';
 import { IIsFullViewProps } from '@utils/types';
 
-export const Container = styled.nav<{ isFull: boolean }>`
-	${({ isFull }) =>
-		isFull &&
-		`
+export const Container = styled.nav<IIsFullViewProps>`
+	height: fit-content;
+
+	${({ isFullView }) =>
+		isFullView
+			? `
 		width: fit-content;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 150px;
-	`}
+		margin: 150px auto 0;
+	`
+			: `	
+		position: fixed;
+		top: 150px;`}
 `;
 
 const Nav: FC<IIsFullViewProps> = ({ isFullView = false }) => {
 	return (
-		<Container isFull={isFullView}>
-			{data.map((item) => (
-				<Fragment key={item.id}>
-					<NavGroup title={item.title} list={item.list} />
+		<Container isFullView={isFullView}>
+			{data.map((item: any) => (
+				<Fragment key={item._id}>
+					<NavGroup
+						title={item.title}
+						list={item.list}
+						isFullView={isFullView}
+					/>
 				</Fragment>
 			))}
 		</Container>

@@ -5,23 +5,24 @@ export interface IChildrenProps {
 }
 
 export interface ICheatsData {
-	id: number;
+	_id: number;
 	category: string;
 	title: string;
+	descMeta: string;
 	list: Array<ICheatsDataList>;
 }
 
 export interface INavPageItemProps {
 	title: string;
 	path: string;
-	icon: string;
 }
 
 export interface ICheatsDataList extends INavPageItemProps {
-	desc: string;
+	desc?: string;
 	data: Array<{
-		subtitle: string;
+		subtitle?: string;
 		source: string;
+		_id: number;
 	}>;
 }
 
