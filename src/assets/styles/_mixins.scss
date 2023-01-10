@@ -22,3 +22,8 @@
     @content;
   }
 }
+
+// Transition
+@mixin transition($el, $sec) {
+  transition: $el ease-in-out $sec;
+}

@@ -1,4 +1,14 @@
 .container {
+  font-weight: 700;
+  margin-bottom: 24px;
+
+  &--title {
+    font-size: 60px;
+    line-height: 73px;
+  }
+
   &--subTitle {
+    font-size: 20px;
+    line-height: 24px;
   }
 }
