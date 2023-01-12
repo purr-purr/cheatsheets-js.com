@@ -8,17 +8,23 @@ import Meta from '@modules/common/meta';
 
 import data from '@data/data.json';
 import { ICheatsData } from '@utils/types';
-import { createMetaKeyWords, createTitleMeta } from '@utils/index';
+import {
+	createMetaKeyWords,
+	createTitleMeta,
+	formatToAttr,
+} from '@utils/index';
 
-export const CodeFrame = styled.code`
-	display: block;
-	margin-bottom: 24px;
-`;
+import Skeleton from '@modules/common/Skeleton';
+import CodeFrame from '@modules/common/codeFrame';
+
+// export const CodeFrame = styled.code`
+// 	display: block;
+// 	margin-bottom: 24px;
+// `;
 
 const Category: FC = memo(() => {
 	const router = useRouter();
 	const { category } = router.query;
-
 	const initialState = {
 		category: '',
 		_id: 0,
@@ -53,6 +59,8 @@ const Category: FC = memo(() => {
 		}
 	}, [pageData]);
 
+	const [iframeLoading, setIframeLoading] = useState(true);
+
 	return (
 		<>
 			<Meta
@@ -63,34 +71,37 @@ const Category: FC = memo(() => {
 
 			<Heading text={pageData.title} />
 
-			{pageData.list.map((item) => (
-				<Fragment key={item.title}>
-					<Heading
-						text={item.title}
-						isSubTitle
-						idAttr={`${item.title.toLowerCase()}`}
-					/>
+			{pageData.list.map(
+				(item) =>
+					item.data[0].source.length > 1 && (
+						<Fragment key={item.title}>
+							<Heading
+								text={item.title}
+								isSubTitle
+								idAttr={`${formatToAttr(item.title)}`}
+							/>
 
-					{item.desc && <DescriptionText text={item.desc} />}
+							{item.desc && <DescriptionText text={item.desc} />}
 
-					{item.data.map((subItem) => {
-						const createMarkup = () => {
-							return {
-								__html: subItem.source,
-							};
-						};
+							{item.data.map((subItem) => (
+								<Fragment key={subItem._id}>
+									{subItem.subtitle && (
+										<Heading text={subItem.subtitle} isSubTitle />
+									)}
 
-						return (
-							<Fragment key={subItem._id}>
-								{subItem.subtitle && (
-									<Heading text={subItem.subtitle} isSubTitle />
-								)}
-								<CodeFrame dangerouslySetInnerHTML={createMarkup()} />
-							</Fragment>
-						);
-					})}
-				</Fragment>
-			))}
+									{iframeLoading && <Skeleton />}
+									<CodeFrame
+										iframeLoading={iframeLoading}
+										onLoad={() => {
+											setIframeLoading(false);
+										}}
+										source={subItem.source}
+									/>
+								</Fragment>
+							))}
+						</Fragment>
+					),
+			)}
 		</>
 	);
 });

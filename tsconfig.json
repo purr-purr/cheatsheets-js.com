@@ -36,6 +36,9 @@
       ],
       "@images/*": [
         "./src/assets/images/*"
+      ],
+      "@public/*": [
+        "./public/*"
       ]
     }
   },
