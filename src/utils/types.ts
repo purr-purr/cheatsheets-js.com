@@ -8,7 +8,6 @@ export interface ICheatsData {
 	_id: number;
 	category: string;
 	title: string;
-	descMeta: string;
 	list: Array<ICheatsDataList>;
 }
 
@@ -17,20 +16,25 @@ export interface INavPageItemProps {
 	path: string;
 }
 
-export interface ICheatsDataList extends INavPageItemProps {
+export interface ICheatsDataList {
+	title: string;
 	desc?: string;
 	data: Array<{
 		subtitle?: string;
 		source: string;
-		_id: number;
 	}>;
 }
 
 export interface INavGroupProps extends IIsFullViewProps {
 	title: string;
+	category: string;
 	list: Array<ICheatsDataList>;
 }
 
 export interface IIsFullViewProps {
 	isFullView?: boolean;
+}
+
+export interface ICodeFrameProps {
+	isLoading?: boolean;
 }

@@ -52,6 +52,7 @@ const Nav: FC<IIsFullViewProps> = ({ isFullView = false }) => {
 								<NavGroup
 									title={item.title}
 									list={item.list}
+									category={item.category}
 									isFullView={isFullView}
 								/>
 							</Fragment>
