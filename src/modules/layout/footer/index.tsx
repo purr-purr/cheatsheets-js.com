@@ -8,6 +8,12 @@ export const FooterContainer = styled.footer`
 	height: 47px;
 	margin-left: auto;
 	width: fit-content;
+	transition: opacity 0.5s ease-in-out;
+
+	:hover {
+		opacity: 0.6;
+		transition: opacity 0.5s ease-in-out;
+	}
 `;
 
 const Footer = () => {

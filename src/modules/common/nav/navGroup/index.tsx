@@ -1,6 +1,6 @@
+import { FC, Fragment } from 'react';
 import cn from 'classnames';
 import NavItem from '@modules/common/nav/navItem';
-import { FC, Fragment } from 'react';
 import { INavGroupProps } from '@utils/types';
 
 import s from './NavGroup.module.scss';
@@ -12,15 +12,18 @@ const NavGroup: FC<INavGroupProps> = ({ title, list, isFullView }) => {
 				{title}
 			</summary>
 			<ul className={cn(s.list, isFullView && s[`list--fullView`])}>
-				{list.map((item: any) => (
-					<Fragment key={item.title}>
-						<NavItem
-							title={item.title}
-							path={item.path}
-							isFullView={isFullView}
-						/>
-					</Fragment>
-				))}
+				{list.map(
+					(item: any) =>
+						item.data[0].source.length > 1 && (
+							<Fragment key={item.title}>
+								<NavItem
+									title={item.title}
+									path={item.path}
+									isFullView={isFullView}
+								/>
+							</Fragment>
+						),
+				)}
 			</ul>
 		</details>
 	);

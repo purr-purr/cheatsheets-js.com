@@ -3,6 +3,8 @@ import cn from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { formatToAttr } from '@utils/index';
+
 import { IIsFullViewProps, INavPageItemProps } from '@utils/types';
 
 import s from './NavItem.module.scss';
@@ -11,8 +13,9 @@ type Props = IIsFullViewProps & INavPageItemProps;
 
 const NavItem: FC<Props> = ({ title, path, isFullView }) => {
 	const getIconPath = (iconName: string) => {
-		const toLowerCase = iconName.toLowerCase();
-		return require(`../../../../../public/assets/images/icons/nav-icon_${toLowerCase}.png`);
+		return require(`../../../../../public/assets/images/icons/nav-icon_${formatToAttr(
+			iconName,
+		)}.png`);
 	};
 
 	return (

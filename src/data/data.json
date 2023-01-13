@@ -3,7 +3,7 @@
     "_id": 1,
     "category": "js",
     "title": "JavaScript",
-    "descMeta": "meta desc",
+    "descMeta": "JavaScript Cheat Sheet contains useful code examples with Methods on a single page.",
     "list": [
       {
         "title": "Arrays",
@@ -11,7 +11,7 @@
         "data": [
           {
             "_id": 1,
-            "source": "<iframe src=\"https://codesandbox.io/embed/cheatsheets-js-com-js-array-methods-f4h4ut?autoresize=1&expanddevtools=1&fontsize=14&theme=dark\"\n     style=\"width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;\"\n     title=\" cheatsheets-js.com: JS&gt;ARRAY METHODS\"\n     allow=\"accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking\"\n     sandbox=\"allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts\"\n   ></iframe>"
+            "source": "https://codesandbox.io/embed/cheatsheets-js-com-js-array-methods-f4h4ut?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark"
           }
         ]
       },
@@ -20,8 +20,8 @@
         "path": "/category/js/#numbers",
         "data": [
           {
-            "_id": 2,
-            "source": "<iframe src=\"https://codesandbox.io/embed/cheatsheets-js-com-js-numbers-methods-2bstbq?autoresize=1&expanddevtools=1&fontsize=14&theme=dark\"\n     style=\"width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;\"\n     title=\" cheatsheets-js.com: JS&gt;NUMBERS METHODS\"\n     allow=\"accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking\"\n     sandbox=\"allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts\"\n   ></iframe>"
+            "_id": 1,
+            "source": "https://codesandbox.io/embed/cheatsheets-js-com-js-numbers-methods-2bstbq?fontsize=14&hidenavigation=1&theme=dark&view=editor"
           }
         ]
       },
@@ -30,8 +30,88 @@
         "path": "/category/js/#objects",
         "data": [
           {
-            "_id": 3,
-            "source": "<iframe src=\"https://codesandbox.io/embed/cheatsheets-js-com-js-numbers-methods-2bstbq?autoresize=1&expanddevtools=1&fontsize=14&theme=dark\"\n     style=\"width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;\"\n     title=\" cheatsheets-js.com: JS&gt;NUMBERS METHODS\"\n     allow=\"accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking\"\n     sandbox=\"allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts\"\n   ></iframe>"
+            "_id": 1,
+            "source": "https://codesandbox.io/embed/cheatsheets-js-com-js-object-wz2iud?fontsize=14&hidenavigation=1&theme=dark&view=editor"
+          }
+        ]
+      },
+      {
+        "title": "Local Storage",
+        "path": "/category/js/#local-storage",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "Promise",
+        "path": "/category/js/#promise",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "Lazy load & dynamic imports",
+        "path": "/category/js/#lazy-load-&-dynamic-imports",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "Getter & Setter",
+        "path": "/category/js/#getter-&-setter",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "Fetch & axios",
+        "path": "/category/js/#fetch-&-axios",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "path": "/category/js/#functions",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "setTimeout & setInterval",
+        "path": "/category/js/#settimeout-&-setinterval",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "Class",
+        "path": "/category/js/#class",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
           }
         ]
       }
@@ -41,11 +121,11 @@
     "_id": 2,
     "category": "react",
     "title": "React JS",
-    "descMeta": "meta desc",
+    "descMeta": "React JS Cheat Sheet contains useful code examples on a single page.",
     "list": [
       {
-        "title": "Arrays",
-        "path": "/category/react/#arrays",
+        "title": "Components",
+        "path": "/category/react/#components",
         "desc": "Arrays desc",
         "data": [
           {
@@ -55,12 +135,23 @@
         ]
       },
       {
-        "title": "Numbers",
-        "path": "/category/react/#numbers",
+        "title": "Components lifecycle",
+        "path": "/category/react/#components-lifecycle",
+        "desc": "Arrays desc",
+        "data": [
+          {
+            "_id": 1,
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "Hooks",
+        "path": "/category/react/#hooks",
         "desc": "Numbers desc",
         "data": [
           {
-            "_id": 2,
+            "_id": 1,
             "source": "/"
           }
         ]
