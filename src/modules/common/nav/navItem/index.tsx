@@ -17,7 +17,6 @@ const NavItem: FC<Props> = ({ title, path, isFullView }) => {
 			iconName,
 		)}.png`);
 	};
-
 	return (
 		<li className={cn(s.container, isFullView && s[`container--fullView`])}>
 			<Link

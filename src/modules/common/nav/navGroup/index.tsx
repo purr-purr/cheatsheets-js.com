@@ -2,10 +2,13 @@ import { FC, Fragment } from 'react';
 import cn from 'classnames';
 import NavItem from '@modules/common/nav/navItem';
 import { INavGroupProps } from '@utils/types';
+import {formatToAttr} from "@utils/index";
+
+import {DYNAMIC_PAGE_CATALOG_NAME} from "@utils/const";
 
 import s from './NavGroup.module.scss';
 
-const NavGroup: FC<INavGroupProps> = ({ title, list, isFullView }) => {
+const NavGroup: FC<INavGroupProps> = ({ title, list, isFullView, category }) => {
 	return (
 		<details className={s.container} open>
 			<summary className={cn(s.heading, isFullView && s[`heading--fullView`])}>
@@ -18,7 +21,7 @@ const NavGroup: FC<INavGroupProps> = ({ title, list, isFullView }) => {
 							<Fragment key={item.title}>
 								<NavItem
 									title={item.title}
-									path={item.path}
+									path={`/${DYNAMIC_PAGE_CATALOG_NAME}/${category}#${formatToAttr(item.title)}`}
 									isFullView={isFullView}
 								/>
 							</Fragment>

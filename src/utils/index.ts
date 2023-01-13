@@ -1,7 +1,21 @@
-import { APP_TITLE, COMMON_KEY_WORDS } from '@utils/const';
+import {
+	APP_META_DESC,
+	APP_TITLE,
+	CODE_FRAME_SETTINGS,
+	COMMON_KEY_WORDS
+} from '@utils/const';
 
-export const createTitleMeta = (title: string) => {
-	return `${title} | ${APP_TITLE}`;
+export const createMetaTitle = (title: string) => {
+	return `${title} ${APP_TITLE}`;
+};
+
+export const createMetaDescCommon = (title: string) => {
+	return `${title} ${APP_TITLE} ${APP_META_DESC}`;
+};
+
+export const createMetaDescHome = (allSubTitles: any[]) => {
+	const list = allSubTitles.join(' and ');
+	return `${list} ${APP_TITLE} ${APP_META_DESC}`;
 };
 
 export const createMetaKeyWords = (title: string, allSubTitles: any[]) => {
@@ -12,4 +26,8 @@ export const createMetaKeyWords = (title: string, allSubTitles: any[]) => {
 export const formatToAttr = (item: string) => {
 	const regExSpaces = /\s/g;
 	return item.toLowerCase().replace(regExSpaces, '-');
+};
+
+export const fixSandboxLink = (item: string) => {
+	return item.replace('.io/s/', '.io/embed/') + CODE_FRAME_SETTINGS;
 };

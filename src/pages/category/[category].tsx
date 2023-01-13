@@ -1,26 +1,19 @@
 import { FC, Fragment, memo, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
 
 import Heading from '@modules/common/heading';
 import DescriptionText from '@modules/common/descriptionText';
 import Meta from '@modules/common/meta';
+import CodeFrame from '@modules/common/codeFrame';
 
 import data from '@data/data.json';
 import { ICheatsData } from '@utils/types';
 import {
+	createMetaDescCommon,
 	createMetaKeyWords,
-	createTitleMeta,
+	createMetaTitle,
 	formatToAttr,
 } from '@utils/index';
-
-import Skeleton from '@modules/common/Skeleton';
-import CodeFrame from '@modules/common/codeFrame';
-
-// export const CodeFrame = styled.code`
-// 	display: block;
-// 	margin-bottom: 24px;
-// `;
 
 const Category: FC = memo(() => {
 	const router = useRouter();
@@ -30,15 +23,12 @@ const Category: FC = memo(() => {
 		_id: 0,
 		list: [
 			{
-				data: [{ _id: 0, source: '', subtitle: '' }],
+				data: [{ source: '', subtitle: '' }],
 				desc: '',
-				icon: '',
-				path: '',
 				title: '',
 			},
 		],
 		title: '',
-		descMeta: '',
 	};
 	const [pageData, setPageData] = useState<ICheatsData>(initialState);
 
@@ -64,8 +54,8 @@ const Category: FC = memo(() => {
 	return (
 		<>
 			<Meta
-				title={createTitleMeta(pageData.title)}
-				desc={pageData.descMeta}
+				title={createMetaTitle(pageData.title)}
+				desc={createMetaDescCommon(pageData.title)}
 				keyWords={createMetaKeyWords(pageData.title, titlesArr)}
 			/>
 
@@ -83,13 +73,11 @@ const Category: FC = memo(() => {
 
 							{item.desc && <DescriptionText text={item.desc} />}
 
-							{item.data.map((subItem) => (
-								<Fragment key={subItem._id}>
+							{item.data.map((subItem, index) => (
+								<Fragment key={index.toString()}>
 									{subItem.subtitle && (
 										<Heading text={subItem.subtitle} isSubTitle />
 									)}
-
-									{iframeLoading && <Skeleton />}
 									<CodeFrame
 										iframeLoading={iframeLoading}
 										onLoad={() => {

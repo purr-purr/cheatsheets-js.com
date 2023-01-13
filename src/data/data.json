@@ -3,114 +3,91 @@
     "_id": 1,
     "category": "js",
     "title": "JavaScript",
-    "descMeta": "JavaScript Cheat Sheet contains useful code examples with Methods on a single page.",
     "list": [
       {
         "title": "Arrays",
-        "path": "/category/js/#arrays",
         "data": [
           {
-            "_id": 1,
-            "source": "https://codesandbox.io/embed/cheatsheets-js-com-js-array-methods-f4h4ut?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-array-methods-f4h4ut"
           }
         ]
       },
       {
         "title": "Numbers",
-        "path": "/category/js/#numbers",
         "data": [
           {
-            "_id": 1,
-            "source": "https://codesandbox.io/embed/cheatsheets-js-com-js-numbers-methods-2bstbq?fontsize=14&hidenavigation=1&theme=dark&view=editor"
-          }
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-numbers-methods-2bstbq"
+           }
         ]
       },
       {
         "title": "Objects",
-        "path": "/category/js/#objects",
         "data": [
           {
-            "_id": 1,
-            "source": "https://codesandbox.io/embed/cheatsheets-js-com-js-object-wz2iud?fontsize=14&hidenavigation=1&theme=dark&view=editor"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-object-wz2iud"
           }
         ]
       },
       {
         "title": "Local Storage",
-        "path": "/category/js/#local-storage",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "Promise",
-        "path": "/category/js/#promise",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "Lazy load & dynamic imports",
-        "path": "/category/js/#lazy-load-&-dynamic-imports",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "Getter & Setter",
-        "path": "/category/js/#getter-&-setter",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "Fetch & axios",
-        "path": "/category/js/#fetch-&-axios",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "Functions",
-        "path": "/category/js/#functions",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "setTimeout & setInterval",
-        "path": "/category/js/#settimeout-&-setinterval",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "Class",
-        "path": "/category/js/#class",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
@@ -120,38 +97,31 @@
   {
     "_id": 2,
     "category": "react",
-    "title": "React JS",
-    "descMeta": "React JS Cheat Sheet contains useful code examples on a single page.",
+    "title": "ReactJS",
     "list": [
       {
         "title": "Components",
-        "path": "/category/react/#components",
         "desc": "Arrays desc",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "Components lifecycle",
-        "path": "/category/react/#components-lifecycle",
         "desc": "Arrays desc",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]
       },
       {
         "title": "Hooks",
-        "path": "/category/react/#hooks",
         "desc": "Numbers desc",
         "data": [
           {
-            "_id": 1,
             "source": "/"
           }
         ]

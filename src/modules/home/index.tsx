@@ -2,28 +2,36 @@ import { useEffect, useState } from 'react';
 
 import Logo from '@modules/common/logo';
 import Meta from '@modules/common/meta';
-import { createMetaKeyWords, createTitleMeta } from '@utils/index';
+import {
+	createMetaDescHome,
+	createMetaKeyWords,
+	createMetaTitle
+} from '@utils/index';
 
 import data from '@data/data.json';
+import messages from "@utils/messages";
 
 const Home = () => {
-	const homePageMetaTitle = 'Home Page JavaScript';
 	const [titlesArr, setTitlesArr] = useState<any[]>([]);
+	let uniqueTitlesArr = titlesArr.filter((v, i, a) => a.indexOf(v) === i);
+
 
 	useEffect(() => {
 		data.map(
-			(item: any) =>
-				!titlesArr.includes(item.title) &&
-				setTitlesArr((current) => [...current, item.title]),
+			(item: any) => {
+				if(!titlesArr.includes(item.title)) {
+					setTitlesArr((current) => [...current, item.title]);
+				}
+			}
 		);
 	}, []);
-
+	
 	return (
 		<>
 			<Meta
-				title={createTitleMeta(homePageMetaTitle)}
-				desc="Home"
-				keyWords={createMetaKeyWords(homePageMetaTitle, titlesArr)}
+				title={createMetaTitle(messages.HOME_PAGE_JAVA_SCRIPT)}
+				desc={createMetaDescHome(uniqueTitlesArr)}
+				keyWords={createMetaKeyWords(messages.HOME_PAGE_JAVA_SCRIPT, uniqueTitlesArr)}
 			/>
 			<Logo isFullView />
 		</>
