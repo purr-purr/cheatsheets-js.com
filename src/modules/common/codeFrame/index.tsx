@@ -9,7 +9,7 @@ export const Container = styled.article`
 	position: relative;
 	height: 500px;
 	width: 100%;
-	margin-bottom: 24px;
+	margin-bottom: 48px;
 `;
 
 export const Frame = styled.iframe<ICodeFrameProps>`

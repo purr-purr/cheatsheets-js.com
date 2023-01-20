@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Text = styled.p`
 	font-weight: 500;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 `;
 
 const DescriptionText: FC<{

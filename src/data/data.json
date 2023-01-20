@@ -5,15 +5,17 @@
     "title": "JavaScript",
     "list": [
       {
-        "title": "Arrays",
+        "title": "String",
+        "desc": "Learn how to work with JS strings and find the most common functions to work with this data type.",
         "data": [
           {
-            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-array-methods-f4h4ut"
-          }
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-string-mr57eh"
+           }
         ]
       },
       {
         "title": "Numbers",
+        "desc": "Work with JS numbers, predefined constants and perform math functions.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-numbers-methods-2bstbq"
@@ -21,10 +23,46 @@
         ]
       },
       {
+        "title": "Arrays",
+        "desc": "Learn how to organize your variables in vectors and how to use them.",
+        "data": [
+          {
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-array-methods-f4h4ut"
+          }
+        ]
+      },
+      {
         "title": "Objects",
+        "desc": "The Object type represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-object-wz2iud"
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "desc": "Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output. To use a function, you must define it somewhere in the scope from which you wish to call it.",
+        "data": [
+          {
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-functions-18vz9e"
+          }
+        ]
+      },
+      {
+        "title": "Regular Expressions",
+        "desc": "Use RegEx to define a search pattern.",
+        "data": [
+          {
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-regex-6vyo79?file=/src/index.js"
+          }
+        ]
+      },    {
+        "title": "setTimeout & setInterval",
+        "desc": "The global setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires. The setInterval() method, offered on the Window and Worker interfaces, repeatedly calls a function or executes a code snippet, with a fixed time delay between each call.",
+        "data": [
+          {
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-settimeout-and-setinterval-rfg12e"
           }
         ]
       },
@@ -45,18 +83,11 @@
         ]
       },
       {
-        "title": "Lazy load & dynamic imports",
-        "data": [
-          {
-            "source": "/"
-          }
-        ]
-      },
-      {
         "title": "Getter & Setter",
+        "desc": "The get syntax binds an object property to a function that will be called when that property is looked up. The set syntax binds an object property to a function to be called when there is an attempt to set that property. It can also be used in classes.",
         "data": [
           {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-getter-and-setter-shkikr"
           }
         ]
       },
@@ -69,26 +100,11 @@
         ]
       },
       {
-        "title": "Functions",
+        "title": "Classes",
+        "desc": "Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are unique to classes.",
         "data": [
           {
-            "source": "/"
-          }
-        ]
-      },
-      {
-        "title": "setTimeout & setInterval",
-        "data": [
-          {
-            "source": "/"
-          }
-        ]
-      },
-      {
-        "title": "Class",
-        "data": [
-          {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-classes-yziuzk"
           }
         ]
       }
@@ -120,6 +136,14 @@
       {
         "title": "Hooks",
         "desc": "Numbers desc",
+        "data": [
+          {
+            "source": "/"
+          }
+        ]
+      },
+      {
+        "title": "Lazy load & dynamic imports",
         "data": [
           {
             "source": "/"
