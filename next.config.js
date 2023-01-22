@@ -11,15 +11,14 @@ const nextConfig = {
     images: {
         unoptimized: true
     },
-    distDir: "_next",
-    generateBuildId: async () => {
-        const date = new Date();
-
-        let day = date.getDate();
-        let month = date.getMonth() + 1;
-        let year = date.getFullYear();
-
-        return `${day}-${month}-${year}`;
+    exportPathMap: async function () {
+        return {
+            '/': {page: '/'},
+            '/category/js': {
+                page: '/category/[category]'
+            }
+        }
     },
+    trailingSlash: true
 };
 module.exports = nextConfig;

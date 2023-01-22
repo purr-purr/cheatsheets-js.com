@@ -12,19 +12,20 @@ import s from './NavItem.module.scss';
 
 type Props = IIsFullViewProps & INavPageItemProps;
 
-const NavItem: FC<Props> = ({title, path, isFullView, hash}) => {
+const NavItem: FC<Props> = ({title, path, isFullView}) => {
     const router = useRouter();
+    const [isCheckRouter, setIsCheckRouter] = useState(false);
+    const hash = formatToAttr(title);
+
     const getIconPath = (iconName: string) => {
         return require(`../../../../../public/assets/images/icons/nav-icon_${formatToAttr(
             iconName,
         )}.png`);
     };
-
-    const [isCheckRouter, setIsCheckRouter] = useState(false);
-
+    
     useEffect(() => {
             const itCurrentBlock = router.asPath.includes(hash);
-            itCurrentBlock && router.push(`${path}#${hash}`);
+            itCurrentBlock && router.push(path);
             setIsCheckRouter(false);
         },
         [isCheckRouter, router.asPath]);
@@ -32,12 +33,13 @@ const NavItem: FC<Props> = ({title, path, isFullView, hash}) => {
     return (
         <li className={cn(s.container, isFullView && s[`container--fullView`])}>
             <Link
-                href={`${path}#${hash}`}
-                as={`${path}#${hash}`}
-                className={cn(s.link, isFullView && s[`link--fullView`])}
+                href="/category/[category]"
+                as={path}
                 legacyBehavior
             >
-                <a onClick={() => setIsCheckRouter(true)}>
+                <a
+                    onClick={() => setIsCheckRouter(true)}
+                    className={cn(s.link, isFullView && s[`link--fullView`])}>
                     <Image
                         className={s.icon}
                         src={getIconPath(title)}

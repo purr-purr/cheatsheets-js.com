@@ -1,5 +1,6 @@
 import {FC, Fragment} from 'react';
 import cn from 'classnames';
+
 import NavItem from '@modules/common/nav/navItem';
 import {INavGroupProps} from '@utils/types';
 import {formatToAttr} from "@utils/index";
@@ -22,8 +23,7 @@ const NavGroup: FC<INavGroupProps> = ({title, list, isFullView, category}) => {
                             <Fragment key={item.title}>
                                 <NavItem
                                     title={item.title}
-                                    path={`/${DYNAMIC_PAGE_CATALOG_NAME}/${category}`}
-                                    hash={formatToAttr(item.title)}
+                                    path={`/${DYNAMIC_PAGE_CATALOG_NAME}/${category}#${formatToAttr(item.title)}`}
                                     isFullView={isFullView}
                                 />
                             </Fragment>

@@ -14,7 +14,6 @@ export interface ICheatsData {
 export interface INavPageItemProps {
     title: string;
     path: string;
-    hash: string;
 }
 
 export interface ICheatsDataList {

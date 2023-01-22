@@ -21,7 +21,7 @@ ftpDeploy
     .catch((err) => console.log(err));
 
 ftpDeploy.on("uploaded", function (data) {
-    console.log(data.transferredFileCount + '/' + data.totalFilesCount);
+    console.log('FTP uploaded: ' + data.transferredFileCount + '/' + data.totalFilesCount);
 });
 
 ftpDeploy.on("upload-error", function (data) {
