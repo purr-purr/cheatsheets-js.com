@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 import Logo from '@modules/common/logo';
 import Meta from '@modules/common/meta';
@@ -15,17 +15,16 @@ const Home = () => {
 	const [titlesArr, setTitlesArr] = useState<any[]>([]);
 	let uniqueTitlesArr = titlesArr.filter((v, i, a) => a.indexOf(v) === i);
 
-
 	useEffect(() => {
 		data.map(
 			(item: any) => {
-				if(!titlesArr.includes(item.title)) {
+				if (!titlesArr.includes(item.title)) {
 					setTitlesArr((current) => [...current, item.title]);
 				}
 			}
 		);
 	}, []);
-	
+
 	return (
 		<>
 			<Meta
@@ -33,7 +32,7 @@ const Home = () => {
 				desc={createMetaDescHome(uniqueTitlesArr)}
 				keyWords={createMetaKeyWords(messages.HOME_PAGE_JAVA_SCRIPT, uniqueTitlesArr)}
 			/>
-			<Logo isFullView />
+			<Logo isFullView/>
 		</>
 	);
 };

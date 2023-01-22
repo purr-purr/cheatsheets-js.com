@@ -41,6 +41,7 @@ const CodeFrame: FC<{
 				sandbox={CODE_FRAME_SANDBOX_ATTR}
 				allow={CODE_FRAME_ALLOW_ATTR}
 				onLoad={onLoad}
+				loading="lazy"
 			/>
 		</Container>
 

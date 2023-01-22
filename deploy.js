@@ -1,6 +1,6 @@
 let FtpDeploy = require('ftp-deploy');
 let ftpDeploy = new FtpDeploy();
-require('dotenv').config({ path: '.env.local' });
+require('dotenv').config({path: '.env.local'});
 
 let config = {
     user: process.env.FTP_USER,
@@ -20,18 +20,8 @@ ftpDeploy
     .then((res) => console.log('FTP Deploy finished'))
     .catch((err) => console.log(err));
 
-ftpDeploy.on("uploading", function (data) {
-    console.log(data.totalFilesCount);
-    console.log(data.transferredFileCount);
-    console.log(data.filename);
-});
-
 ftpDeploy.on("uploaded", function (data) {
-    console.log(data);
-});
-
-ftpDeploy.on("log", function (data) {
-    console.log(data);
+    console.log(data.transferredFileCount + '/' + data.totalFilesCount);
 });
 
 ftpDeploy.on("upload-error", function (data) {
