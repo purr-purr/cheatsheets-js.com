@@ -1,60 +1,93 @@
-import {FC, useEffect, useState} from 'react';
-import {useRouter} from "next/router";
-import Link from "next/link";
+import { FC, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Image from 'next/image';
-import cn from 'classnames';
+import styled from 'styled-components';
 
-import {formatToAttr} from '@utils/index';
+import { formatToAttr } from '@utils/index';
+import { colors, transition } from '@styles/theme';
 
-import {IIsFullViewProps, INavPageItemProps} from '@utils/types';
-
-import s from './NavItem.module.scss';
+import { IIsFullViewProps, INavPageItemProps } from '@utils/types';
 
 type Props = IIsFullViewProps & INavPageItemProps;
 
-const NavItem: FC<Props> = ({title, path, isFullView}) => {
-    const router = useRouter();
-    const [isCheckRouter, setIsCheckRouter] = useState(false);
-    const hash = formatToAttr(title);
+export const ListItem = styled.li<IIsFullViewProps>`
+	min-width: 251px;
+	height: 40px;
+	box-shadow: 0 4px 8px ${colors.darkShadow};
+	border-radius: 12px;
+	background-color: ${colors.white};
+	border: 0.5px solid transparent;
+	${transition('border', 0.7)};
 
-    const getIconPath = (iconName: string) => {
-        return require(`../../../../../public/assets/images/icons/nav-icon_${formatToAttr(
-            iconName,
-        )}.png`);
-    };
-    
-    useEffect(() => {
-            const itCurrentBlock = router.asPath.includes(hash);
-            itCurrentBlock && router.push(path);
-            setIsCheckRouter(false);
-        },
-        [isCheckRouter, router.asPath]);
+	&:hover {
+		border: 0.5px solid ${colors.mainBlack};
+		cursor: pointer;
+		${transition('border', 0.7)};
+	}
 
-    return (
-        <li className={cn(s.container, isFullView && s[`container--fullView`])}>
-            <Link
-                href="/category/[category]"
-                as={path}
-                legacyBehavior
-            >
-                <a
-                    onClick={() => setIsCheckRouter(true)}
-                    className={cn(s.link, isFullView && s[`link--fullView`])}>
-                    <Image
-                        className={s.icon}
-                        src={getIconPath(title)}
-                        alt={`${title} icon`}
-                        width={20}
-                        height={20}
-                    />
+	${({ isFullView }) =>
+		isFullView &&
+		`   
+      min-width: 116px;
+      height: 90px;
+    `}
+`;
 
-                    <p className={cn(s.title, isFullView && s[`title--fullView`])}>
-                        {title}
-                    </p>
-                </a>
-            </Link>
-        </li>
-    );
+export const Title = styled.p<IIsFullViewProps>`
+	font-weight: 500;
+
+	${({ isFullView }) => isFullView && `margin-top: 4px;`}
+`;
+
+export const LinkInner = styled.a<IIsFullViewProps>`
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+
+	${({ isFullView }) =>
+		isFullView
+			? `
+		flex-direction: column;
+    	justify-content: center;
+    	`
+			: `gap: 12px;`}
+`;
+
+const NavItem: FC<Props> = ({ title, path, isFullView }) => {
+	const router = useRouter();
+	const [isCheckRouter, setIsCheckRouter] = useState(false);
+	const hash = formatToAttr(title);
+
+	const getIconPath = (iconName: string) => {
+		return require(`../../../../../public/assets/images/icons/nav-icon_${formatToAttr(
+			iconName,
+		)}.png`);
+	};
+
+	useEffect(() => {
+		const itCurrentBlock = router.asPath.includes(hash);
+		itCurrentBlock && router.push(path);
+		setIsCheckRouter(false);
+	}, [isCheckRouter, router.asPath]);
+
+	return (
+		<ListItem isFullView={isFullView}>
+			<Link href="/category/[category]" as={path} legacyBehavior>
+				<LinkInner onClick={() => setIsCheckRouter(true)}>
+					<Image
+						src={getIconPath(title)}
+						alt={`${title} icon`}
+						width={20}
+						height={20}
+					/>
+					<Title isFullView={isFullView}>{title}</Title>
+				</LinkInner>
+			</Link>
+		</ListItem>
+	);
 };
 
 export default NavItem;

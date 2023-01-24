@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 import LOGO from '@public/assets/images/logo.svg';
 
-const Logo: FC<{ width?: number; height?: number; isFullView: boolean }> = ({
-	width = 680,
-	height = 44,
-	isFullView,
-}) => {
+const Logo: FC<{
+	width?: number;
+	height?: number;
+	isFullView: boolean;
+}> = ({ width, height, isFullView }) => {
 	return (
 		<Link
 			href={'/'}

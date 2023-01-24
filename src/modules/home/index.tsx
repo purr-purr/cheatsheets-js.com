@@ -10,10 +10,13 @@ import {
 
 import data from '@data/data.json';
 import messages from "@utils/messages";
+import {useMediaQuery} from "@modules/common/hooks";
+import {MOBILE_BREAKPOINT} from "@utils/const";
 
 const Home = () => {
+    const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
     const [titlesArr, setTitlesArr] = useState<any[]>([]);
-    let uniqueTitlesArr = titlesArr.filter((v, i, a) => a.indexOf(v) === i);
+    const uniqueTitlesArr = titlesArr.filter((v, i, a) => a.indexOf(v) === i);
 
     useEffect(() => {
         data.map(
@@ -32,7 +35,10 @@ const Home = () => {
                 desc={createMetaDescHome(uniqueTitlesArr)}
                 keyWords={createMetaKeyWords(messages.JAVA_SCRIPT, uniqueTitlesArr)}
             />
-            <Logo isFullView/>
+            <Logo
+                isFullView
+                width={isMobile ? 320 : 680}
+                height={isMobile ? 21 : 44}/>
         </>
     );
 };

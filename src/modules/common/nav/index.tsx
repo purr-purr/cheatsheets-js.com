@@ -6,6 +6,7 @@ import NavGroup from '@modules/common/nav/navGroup';
 
 import data from '@data/data.json';
 import { IIsFullViewProps } from '@utils/types';
+import { devices } from '@styles/theme';
 
 export const Container = styled.nav<IIsFullViewProps>`
 	height: fit-content;
@@ -14,8 +15,10 @@ export const Container = styled.nav<IIsFullViewProps>`
 			? `
 		width: fit-content;
 		margin: 150px auto 0;
-	
-	`
+		${devices.mobile} {
+		margin-top: 80px;
+		}
+		`
 			: `	
 		position: fixed;
 		top: 80px;

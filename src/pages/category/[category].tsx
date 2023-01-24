@@ -49,7 +49,6 @@ const Category: FC = memo(() => {
         }
     }, [pageData]);
 
-    const [iframeLoading, setIframeLoading] = useState(true);
     return (
         <>
             <Meta
@@ -83,10 +82,6 @@ const Category: FC = memo(() => {
                                             />
                                         )}
                                         <CodeFrame
-                                            iframeLoading={iframeLoading}
-                                            onLoad={() => {
-                                                setIframeLoading(false);
-                                            }}
                                             source={subItem.source}
                                         />
                                     </Fragment>
