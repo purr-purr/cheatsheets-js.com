@@ -1,24 +1,36 @@
-import { createElement, FC } from 'react';
-import cn from 'classnames';
+import { FC } from 'react';
+import styled from 'styled-components';
 
-import s from './Heading.module.scss';
+export const MainTitle = styled.h1<{ isSubTitle: boolean }>`
+	font-weight: 700;
+	margin-bottom: 24px;
+
+	${({ isSubTitle }) =>
+		isSubTitle
+			? `   
+			font-size: 20px;
+			line-height: 24px;
+    		`
+			: `
+			font-size: 60px;
+			line-height: 73px;
+			`}
+`;
 
 const Heading: FC<{
 	text: string;
 	isSubTitle?: boolean;
 	idAttr?: string;
 }> = ({ text, isSubTitle = false, idAttr }) => {
-	const classNameList = cn(
-		s.container,
-		isSubTitle ? s[`container--subTitle`] : s[`container--title`],
+	return (
+		<MainTitle
+			isSubTitle={isSubTitle}
+			as={isSubTitle ? 'h2' : 'h1'}
+			id={idAttr}
+		>
+			{text}
+		</MainTitle>
 	);
-
-	const element = createElement(
-		isSubTitle ? 'h2' : 'h1',
-		{ className: classNameList, id: idAttr },
-		text,
-	);
-	return element;
 };
 
 export default Heading;

@@ -10,6 +10,7 @@
     "deploy": "next build && next export && node deploy"
   },
   "dependencies": {
+    "@types/gtag.js": "^0.0.12",
     "@types/react": "18.0.26",
     "@types/styled-components": "^5.1.26",
     "classnames": "^2.3.2",

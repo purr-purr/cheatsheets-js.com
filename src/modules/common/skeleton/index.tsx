@@ -1,6 +1,4 @@
-import ContentLoader from 'react-content-loader';
 import styled from "styled-components";
-import messages from "@utils/messages";
 
 export const Container = styled.article`
   position: absolute;
@@ -9,74 +7,40 @@ export const Container = styled.article`
   width: 100%;
   height: 100%;
   z-index: 5;
-`;
+  cursor: progress;
+  background-color: transparent;
 
-export const Text = styled.p`
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: absolute;
-  top: calc((100% - 20px) / 2);
-  left: 0;
-  width: 100%;
-  text-align: center;
-  height: 18px;
-  font-size: 18px;
-  line-height: 14px;
-  z-index: 6;
-
-  span {
+  &:after {
     content: '';
-    animation: blink 1.5s infinite;
-    animation-fill-mode: both;
-    display: block;
-    height: 3px;
-    width: 3px;
-    background: #1C1C1C;
-    border-radius: 50%;
-    margin-left: 3px;
-
-    &:nth-child(2) {
-      animation-delay: .2s;
-      margin-left: 5px;
-    }
-
-    &:nth-child(3) {
-      animation-delay: .4s;
-      margin-left: 5px;
-    }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
+    animation: shimmer 2s infinite;
+    z-index: 2;
   }
 
-  @keyframes blink {
-    0% {
-      opacity: .1;
-    }
-    20% {
-      opacity: 1;
-    }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-position: left;
+    object-fit: cover;
+  }
+
+  @keyframes shimmer {
     100% {
-      opacity: .1;
+      transform: translateX(100%);
     }
   }
 `;
+
 
 const Skeleton = () => (
-    <Container>
-        <ContentLoader
-            width="100%"
-            height="100%"
-            backgroundColor="#f0f0f0"
-            foregroundColor="#dedede"
-        >
-            <rect width="100%" height="100%"/>
-        </ContentLoader>
-        <Text>
-            {messages.LOADING}
-            <span></span>
-            <span></span>
-            <span></span>
-        </Text>
-    </Container>
+    <Container/>
 );
 
 export default Skeleton;

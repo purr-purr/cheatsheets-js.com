@@ -1,14 +1,32 @@
 :root {
   --main-bg: #F9F9F9;
   --main-black: #1C1C1C;
-  --white: #fff;
-  --dark-shadow: rgba(0, 0, 0, 0.08);
+  --mobile-bp: 1024px;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-button {
+    height: 0;
+    width: 100%;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--main-bg);
+    border-radius: 50px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: var(--main-black);
+  }
 }
 
 html {
@@ -30,7 +48,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-left: 60px;
-  padding-right: 60px;
+  padding-right: 61px;
+
+  @media (max-width: var(--mobile-bp)) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 a {
@@ -38,26 +61,14 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 p {
   font-size: 16px;
   line-height: 20px;
-}
-
-*::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-*::-webkit-scrollbar-button {
-  height: 0;
-  width: 100%;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #F9F9F9;
-  border-radius: 50px;
-}
-
-*::-webkit-scrollbar-track-piece {
-  background-color: #1C1C1C;
 }
