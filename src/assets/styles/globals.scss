@@ -1,7 +1,8 @@
+$mobile-bp: 1024px;
+
 :root {
   --main-bg: #F9F9F9;
   --main-black: #1C1C1C;
-  --mobile-bp: 1024px;
 }
 
 * {
@@ -48,9 +49,9 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-left: 60px;
-  padding-right: 61px;
-
-  @media (max-width: var(--mobile-bp)) {
+  padding-right: 60px;
+  
+  @media (max-width: $mobile-bp) {
     padding-left: 20px;
     padding-right: 20px;
   }

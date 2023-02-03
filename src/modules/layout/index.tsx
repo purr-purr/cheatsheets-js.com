@@ -4,15 +4,15 @@ import Footer from '@modules/layout/footer';
 import Nav from '@modules/common/nav';
 import { useIsHomePage } from '@modules/common/hooks';
 
-import { IChildrenProps, IIsFullViewProps } from '@utils/types';
+import { IChildrenProps, IIsHomeStylesProps } from '@utils/types';
 import { devices } from '@styles/theme';
 
-export const Container = styled.main<IIsFullViewProps>`
+export const Container = styled.main<IIsHomeStylesProps>`
 	min-height: calc(100vh - 47px);
 	display: flex;
 
-	${({ isFullView }) =>
-		isFullView &&
+	${({ isHomeStyles }) =>
+		isHomeStyles &&
 		`justify-content: center;
 		 flex-direction: column;
 		   ${devices.mobile} {
@@ -21,7 +21,7 @@ export const Container = styled.main<IIsFullViewProps>`
 		 `}
 `;
 
-export const PageLayout = styled.section<IIsFullViewProps>`
+export const PageLayout = styled.section<IIsHomeStylesProps>`
 	width: 100%;
 	max-width: 930px;
 	margin-top: 63px;
@@ -30,8 +30,8 @@ export const PageLayout = styled.section<IIsFullViewProps>`
 		margin-top: 40px;
 	}
 
-	${({ isFullView }) =>
-		isFullView
+	${({ isHomeStyles }) =>
+		isHomeStyles
 			? `
 			width: fit-content;
 			margin-left: auto;
@@ -41,12 +41,13 @@ export const PageLayout = styled.section<IIsFullViewProps>`
 `;
 
 const Layout = ({ children }: IChildrenProps) => {
-	const isHomePage = useIsHomePage();
+	const isHomeView = useIsHomePage();
+
 	return (
 		<>
-			<Container isFullView={isHomePage}>
-				<Nav isFullView={isHomePage} />
-				<PageLayout isFullView={isHomePage}>{children}</PageLayout>
+			<Container isHomeStyles={isHomeView}>
+				<Nav />
+				<PageLayout isHomeStyles={isHomeView}>{children}</PageLayout>
 			</Container>
 			<Footer />
 		</>

@@ -4,17 +4,8 @@ import styled from 'styled-components';
 export const MainTitle = styled.h1<{ isSubTitle: boolean }>`
 	font-weight: 700;
 	margin-bottom: 24px;
-
-	${({ isSubTitle }) =>
-		isSubTitle
-			? `   
-			font-size: 20px;
-			line-height: 24px;
-    		`
-			: `
-			font-size: 60px;
-			line-height: 73px;
-			`}
+	font-size: ${(props) => (props.isSubTitle ? '20px' : '60px')};
+	line-height: ${(props) => (props.isSubTitle ? '24px' : '73px')};
 `;
 
 const Heading: FC<{
@@ -23,11 +14,7 @@ const Heading: FC<{
 	idAttr?: string;
 }> = ({ text, isSubTitle = false, idAttr }) => {
 	return (
-		<MainTitle
-			isSubTitle={isSubTitle}
-			as={isSubTitle ? 'h2' : 'h1'}
-			id={idAttr}
-		>
+		<MainTitle isSubTitle={isSubTitle} as={isSubTitle ? 'h2' : 'h1'} id={idAttr}>
 			{text}
 		</MainTitle>
 	);

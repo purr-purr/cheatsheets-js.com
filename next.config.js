@@ -8,15 +8,16 @@ const nextConfig = {
 	images: {
 		unoptimized: true,
 	},
+	trailingSlash: true,
 	exportPathMap: async function () {
 		return {
 			'/': { page: '/' },
 			'/category/js': {
 				page: '/category/[category]',
 			},
+			'/404': { page: '/404' },
 		};
 	},
-	trailingSlash: true,
 };
 
 module.exports = nextConfig;

@@ -5,19 +5,19 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 import { formatToAttr } from '@utils/index';
-import { colors, transition } from '@styles/theme';
+import { colors, devices, transition } from '@styles/theme';
 
-import { IIsFullViewProps, INavPageItemProps } from '@utils/types';
+import { IIsHomeStylesProps, INavPageItemProps } from '@utils/types';
+import { useIsHomePage } from '@modules/common/hooks';
+import category from '@pages/category/[category]';
 
-type Props = IIsFullViewProps & INavPageItemProps;
+type Props = IIsHomeStylesProps & INavPageItemProps;
 
-export const ListItem = styled.li<IIsFullViewProps>`
-	min-width: 251px;
-	height: 40px;
-	box-shadow: 0 4px 8px ${colors.darkShadow};
-	border-radius: 12px;
+export const ListItem = styled.li<IIsHomeStylesProps>`
 	background-color: ${colors.white};
 	border: 0.5px solid transparent;
+	border-radius: 12px;
+	box-shadow: 0 4px 8px ${colors.darkShadow};
 	${transition('border', 0.7)};
 
 	&:hover {
@@ -26,40 +26,52 @@ export const ListItem = styled.li<IIsFullViewProps>`
 		${transition('border', 0.7)};
 	}
 
-	${({ isFullView }) =>
-		isFullView &&
-		`   
+	${({ isHomeStyles }) =>
+		isHomeStyles
+			? `   
       min-width: 116px;
       height: 90px;
-    `}
+      ${devices.mobile} {
+      min-height: 50px;
+      height: auto;
+      }
+    `
+			: `
+			min-width: 251px;
+			height: 40px;
+	`}
 `;
 
-export const Title = styled.p<IIsFullViewProps>`
+export const Title = styled.p<IIsHomeStylesProps>`
 	font-weight: 500;
 
-	${({ isFullView }) => isFullView && `margin-top: 4px;`}
+	${({ isHomeStyles }) => isHomeStyles && `margin-top: 4px;`}
 `;
 
-export const LinkInner = styled.a<IIsFullViewProps>`
-	display: flex;
+export const LinkInner = styled.a<IIsHomeStylesProps>`
 	align-items: center;
-	width: 100%;
+	display: flex;
 	height: 100%;
 	padding: 10px 20px;
+	width: 100%;
 
-	${({ isFullView }) =>
-		isFullView
+	${({ isHomeStyles }) =>
+		isHomeStyles
 			? `
 		flex-direction: column;
     	justify-content: center;
+    	${devices.mobile} {
+			  min-height: 48px;
+			  }
     	`
 			: `gap: 12px;`}
 `;
 
-const NavItem: FC<Props> = ({ title, path, isFullView }) => {
+const NavItem: FC<Props> = ({ title, path }) => {
 	const router = useRouter();
 	const [isCheckRouter, setIsCheckRouter] = useState(false);
 	const hash = formatToAttr(title);
+	const isHomeView = useIsHomePage();
 
 	const getIconPath = (iconName: string) => {
 		return require(`../../../../../public/assets/images/icons/nav-icon_${formatToAttr(
@@ -74,16 +86,11 @@ const NavItem: FC<Props> = ({ title, path, isFullView }) => {
 	}, [isCheckRouter, router.asPath]);
 
 	return (
-		<ListItem isFullView={isFullView}>
+		<ListItem isHomeStyles={isHomeView}>
 			<Link href="/category/[category]" as={path} legacyBehavior>
-				<LinkInner onClick={() => setIsCheckRouter(true)}>
-					<Image
-						src={getIconPath(title)}
-						alt={`${title} icon`}
-						width={20}
-						height={20}
-					/>
-					<Title isFullView={isFullView}>{title}</Title>
+				<LinkInner isHomeStyles={isHomeView} onClick={() => setIsCheckRouter(true)}>
+					<Image src={getIconPath(title)} alt={title} width={20} height={20} />
+					<Title isHomeStyles={isHomeView}>{title}</Title>
 				</LinkInner>
 			</Link>
 		</ListItem>

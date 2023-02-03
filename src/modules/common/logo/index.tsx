@@ -2,18 +2,20 @@ import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { useIsHomePage } from '@modules/common/hooks';
+
 import LOGO from '@public/assets/images/logo.svg';
 
 const Logo: FC<{
 	width?: number;
 	height?: number;
-	isFullView: boolean;
-}> = ({ width, height, isFullView }) => {
+}> = ({ width, height }) => {
+	const isHomeView = useIsHomePage();
 	return (
 		<Link
 			href={'/'}
 			style={
-				!isFullView
+				!isHomeView
 					? {
 							marginBottom: '150px',
 							display: 'block',

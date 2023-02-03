@@ -17,5 +17,5 @@ export const colors = {
 
 export const transition = (element: string, time: number) =>
 	css`
-		transition: ${time} ease-in-out ${time}s;
+		transition: ${element} ease-in-out ${time}s;
 	`;
