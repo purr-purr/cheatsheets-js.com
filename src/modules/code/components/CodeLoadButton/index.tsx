@@ -12,7 +12,16 @@ export const LoadButtonWrapper = styled.div`
 	height: 66px;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	border-radius: 15px;
 	filter: url('#goo');
+
+	${devices.mobile} {
+		filter: none;
+
+		:hover {
+			opacity: 0.7;
+		}
+	}
 `;
 
 export const LoadButtonItem = styled.button`
@@ -23,10 +32,12 @@ export const LoadButtonItem = styled.button`
 	font-size: 16px;
 	line-height: 1.1;
 	font-weight: 500;
+	border-radius: 15px;
 	position: relative;
 
 	${devices.mobile} {
 		font-size: 14px;
+		border-radius: 20px;
 	}
 
 	:before,
@@ -40,6 +51,10 @@ export const LoadButtonItem = styled.button`
 		transition: transform 1s ease;
 		transform: scale(0);
 		z-index: -1;
+
+		${devices.mobile} {
+			display: none;
+		}
 	}
 
 	:before {

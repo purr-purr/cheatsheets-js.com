@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 
-import AppContext from '@modules/layout/context/AppContext';
+import Index from '@modules/layout/context';
 
-import { IIsMobNavStylesProps } from '@utils/types';
+import { IIsMobNavStylesProps } from '@modules/nav/types';
 
 import CLOSED_ICON from '@modules/nav/assets/navBurgerButton/navBurgerButton_closed-state.svg';
 import OPENED_ICON from '@modules/nav/assets/navBurgerButton/navBurgerButton_opened-state.svg';
@@ -22,7 +22,7 @@ export const Button = styled.button<IIsMobNavStylesProps>`
 `;
 
 const NavBurgerButton = () => {
-	const { handleMobileNavMode, isMobileNavMode } = useContext(AppContext);
+	const { handleMobileNavMode, isMobileNavMode } = useContext(Index);
 
 	return (
 		<Button

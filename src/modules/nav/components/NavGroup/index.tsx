@@ -1,19 +1,17 @@
 import { FC, useContext } from 'react';
 import styled from 'styled-components';
 
-import AppContext from '@modules/layout/context/AppContext';
+import Index from '@modules/layout/context';
 import NavItem from '@modules/nav/components/NavItem';
 
 import { useIsHomePage } from '@modules/common/hooks';
 
-import { devices } from '@styles/theme';
+import { devices, hideScrollBar } from '@styles/theme';
 import { DYNAMIC_PAGE_CATALOG_NAME } from '@utils/const';
 import { formatToAttr } from '@utils/formatters';
-import {
-	IIsHomeStylesProps,
-	IIsMobNavStylesProps,
-	INavGroupProps,
-} from '@utils/types';
+
+import { IIsHomeStylesProps } from '@modules/common/types';
+import { IIsMobNavStylesProps, INavGroupProps } from '@modules/nav/types';
 
 type ContainerProps = IIsMobNavStylesProps & IIsHomeStylesProps;
 
@@ -33,14 +31,7 @@ export const Container = styled.details<ContainerProps>`
 		padding-left: 15px;
     padding-right: 15px;
     margin-left: -15px;
-		
-			::-webkit-scrollbar-thumb {
-			    background-color: transparent;
-			}
-	
-			::-webkit-scrollbar-track-piece {
-				background-color: transparent;
-			}
+    ${hideScrollBar()}
 		`}
 
 	${({ isMobNavStyles }) => isMobNavStyles && `max-width: 320px;`}
@@ -84,7 +75,7 @@ export const List = styled.ul<IIsHomeStylesProps>`
 
 const NavGroup: FC<INavGroupProps> = ({ title, list, category }) => {
 	const isHomeView = useIsHomePage();
-	const { isMobileNavMode } = useContext(AppContext);
+	const { isMobileNavMode } = useContext(Index);
 
 	return (
 		<Container isHomeStyles={isHomeView} isMobNavStyles={isMobileNavMode} open>

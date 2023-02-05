@@ -5,9 +5,9 @@ type AppContextType = {
 	handleMobileNavMode: (isDarkMode: boolean) => void;
 };
 
-const AppContext = createContext<AppContextType>({
+const Index = createContext<AppContextType>({
 	isMobileNavMode: false,
 	handleMobileNavMode: () => {},
 });
 
-export default AppContext;
+export default Index;

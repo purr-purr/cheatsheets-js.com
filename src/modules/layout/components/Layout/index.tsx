@@ -3,14 +3,16 @@ import styled from 'styled-components';
 
 import Footer from '@modules/layout/components/Footer';
 import Header from '@modules/layout/components/Header';
+import Index from '@modules/layout/context';
 import Nav from '@modules/nav/components/Nav';
-import AppContext from 'src/modules/layout/context/AppContext';
 
 import { useIsHomePage, useMediaQuery } from '@modules/common/hooks';
 
 import { devices } from '@styles/theme';
 import { MOBILE_BREAKPOINT } from '@utils/const';
-import { IChildrenProps, IIsHomeStylesProps } from '@utils/types';
+
+import { IIsHomeStylesProps } from '@modules/common/types';
+import { IChildrenProps } from '@modules/layout/types';
 
 export const Container = styled.main<IIsHomeStylesProps>`
 	min-height: calc(100vh - 47px);
@@ -74,14 +76,14 @@ const Layout = ({ children }: IChildrenProps) => {
 
 	return (
 		<>
-			<AppContext.Provider value={context}>
+			<Index.Provider value={context}>
 				<Container isHomeStyles={isHomeView}>
 					<Header />
 					<Nav />
 					<PageLayout isHomeStyles={isHomeView}>{children}</PageLayout>
 				</Container>
 				<Footer />
-			</AppContext.Provider>
+			</Index.Provider>
 		</>
 	);
 };

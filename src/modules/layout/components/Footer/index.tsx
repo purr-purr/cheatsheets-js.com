@@ -1,20 +1,34 @@
 import styled from 'styled-components';
-
 import Link from 'next/link';
 
-import { transition } from '@styles/theme';
+import { colors, transition } from '@styles/theme';
 import { APP_AUTHOR, CONTACT_LINK } from '@utils/const';
 import messages from '@utils/messages';
 
 export const FooterContainer = styled.footer`
-	height: 47px;
+	margin-bottom: 30px;
+	margin-top: 20px;
 	margin-left: auto;
 	width: fit-content;
-	${transition('opacity', 0.5)};
+	position: relative;
+	line-height: 1.3;
+
+	:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0;
+		height: 1px;
+		background-color: ${colors.mainBlack};
+		${transition('width', 0.5)};
+	}
 
 	:hover {
-		opacity: 0.6;
-		${transition('opacity', 0.5)};
+		:after {
+			width: 100%;
+			${transition('width', 0.5)};
+		}
 	}
 `;
 

@@ -4,15 +4,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import AppContext from '@modules/layout/context/AppContext';
+import Index from '@modules/layout/context';
 
 import { useIsHomePage } from '@modules/common/hooks';
 
 import { colors, devices, transition } from '@styles/theme';
 import { formatToAttr } from '@utils/formatters';
-import { IIsHomeStylesProps, INavPageItemProps } from '@utils/types';
 
-type Props = IIsHomeStylesProps & INavPageItemProps;
+import { IIsHomeStylesProps } from '@modules/common/types';
+import { INavPageItemProps } from '@modules/nav/types';
 
 export const ListItem = styled.li<IIsHomeStylesProps>`
 	background-color: ${colors.white};
@@ -61,7 +61,7 @@ export const Title = styled.p<IIsHomeStylesProps>`
 		bottom: 0;
 		width: 0;
 		height: 1px;
-		background-color: ${colors.underline};
+		background-color: ${colors.mainBlack};
 		${transition('width', 0.5)};
 	}
 `;
@@ -85,11 +85,11 @@ export const LinkInner = styled.a<IIsHomeStylesProps>`
 			: `gap: 12px;`}
 `;
 
-const NavItem: FC<Props> = ({ title, path }) => {
+const NavItem: FC<INavPageItemProps> = ({ title, path }) => {
 	const router = useRouter();
 	const hash = formatToAttr(title);
 	const isHomeView = useIsHomePage();
-	const { handleMobileNavMode } = useContext(AppContext);
+	const { handleMobileNavMode } = useContext(Index);
 
 	const getIconPath = (iconName: string) => {
 		return require(`@modules/nav/assets/navItem/navItem_icon-${formatToAttr(
@@ -98,7 +98,7 @@ const NavItem: FC<Props> = ({ title, path }) => {
 	};
 
 	useEffect(() => {
-		const itCurrentBlock = router.asPath.includes(hash);
+		const itCurrentBlock = router.asPath.endsWith(hash);
 		itCurrentBlock && router.push(path);
 	}, [router.asPath]);
 

@@ -1,19 +1,17 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 
-import AppContext from '@modules/layout/context/AppContext';
+import Index from '@modules/layout/context';
 import NavGroup from '@modules/nav/components/NavGroup';
 
 import { useIsHomePage, useMediaQuery } from '@modules/common/hooks';
 
 import data from '@data/data.json';
-import { colors, devices } from '@styles/theme';
+import { colors, devices, hideScrollBar } from '@styles/theme';
 import { MOBILE_BREAKPOINT } from '@utils/const';
-import {
-	IIsHomeStylesProps,
-	IIsMobileStylesProps,
-	IIsMobNavStylesProps,
-} from '@utils/types';
+
+import { IIsHomeStylesProps } from '@modules/common/types';
+import { IIsMobileStylesProps, IIsMobNavStylesProps } from '@modules/nav/types';
 
 type Props = IIsMobNavStylesProps & IIsHomeStylesProps & IIsMobileStylesProps;
 
@@ -42,6 +40,10 @@ export const Inner = styled.nav<Props>`
 			: `
 		position: fixed;
 		top: 150px;
+		
+		height: calc(100vh - 150px);
+		overflow-y: scroll;
+		${hideScrollBar()}
 		`}
 
 	${({ isMobNavStyles, isHomeStyles }) =>
@@ -66,7 +68,7 @@ export const Inner = styled.nav<Props>`
 const Nav = () => {
 	const isHomeView = useIsHomePage();
 	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
-	const { isMobileNavMode } = useContext(AppContext);
+	const { isMobileNavMode } = useContext(Index);
 
 	return (
 		<>

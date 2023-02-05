@@ -121,7 +121,7 @@
         "desc": "Arrays desc",
         "data": [
           {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-getter-and-setter-shkikr"
           }
         ]
       },
@@ -130,7 +130,7 @@
         "desc": "Arrays desc",
         "data": [
           {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-classes-yziuzk"
           }
         ]
       },
@@ -139,7 +139,7 @@
         "desc": "Numbers desc",
         "data": [
           {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-settimeout-and-setinterval-rfg12e"
           }
         ]
       },
@@ -147,7 +147,7 @@
         "title": "Lazy load & dynamic imports",
         "data": [
           {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-functions-18vz9e"
           }
         ]
       }

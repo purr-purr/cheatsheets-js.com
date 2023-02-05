@@ -7,7 +7,8 @@ import Heading from '@modules/common/components/Heading';
 import Meta from '@modules/common/components/Meta';
 
 import data from '@data/data.json';
-import { ICheatsData } from '@utils/types';
+
+import { ICheatsData } from '@modules/common/types';
 
 const Category: FC = memo(() => {
 	const router = useRouter();
