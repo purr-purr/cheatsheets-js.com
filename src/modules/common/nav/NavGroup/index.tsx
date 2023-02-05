@@ -30,6 +30,9 @@ export const Container = styled.details<ContainerProps>`
 		height: fit-content;
 		overflow-y: scroll;
 		padding-bottom: 30px;
+		padding-left: 15px;
+    padding-right: 15px;
+    margin-left: -15px;
 		
 			::-webkit-scrollbar-thumb {
 			    background-color: transparent;
