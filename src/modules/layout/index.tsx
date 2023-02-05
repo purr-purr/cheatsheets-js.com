@@ -11,7 +11,7 @@ import { devices } from '@styles/theme';
 import { MOBILE_BREAKPOINT } from '@utils/const';
 import { IChildrenProps, IIsHomeStylesProps } from '@utils/types';
 
-import AppContext from './Context';
+import AppContext from './AppContext';
 
 export const Container = styled.main<IIsHomeStylesProps>`
 	min-height: calc(100vh - 47px);
