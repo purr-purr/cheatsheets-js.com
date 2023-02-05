@@ -7,20 +7,9 @@ import LOGO from '@public/assets/images/logo.svg';
 const Logo: FC<{
 	width?: number;
 	height?: number;
-	isFullView: boolean;
-}> = ({ width, height, isFullView }) => {
+}> = ({ width, height }) => {
 	return (
-		<Link
-			href={'/'}
-			style={
-				!isFullView
-					? {
-							marginBottom: '150px',
-							display: 'block',
-					  }
-					: undefined
-			}
-		>
+		<Link href={'/'} style={{ display: 'flex', alignItems: 'center' }}>
 			<Image src={LOGO} alt="Logo" width={width} height={height} />
 		</Link>
 	);

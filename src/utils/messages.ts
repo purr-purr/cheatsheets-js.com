@@ -3,7 +3,7 @@ const messages = {
     JAVA_SCRIPT: 'JavaScript',
     LOADING: 'Loading',
     OPEN: 'Open',
-    POSTER_IMAGE: 'Poster image'
+    PRELOADER_POSTER: 'Preloader Poster',
 };
 
 export default messages;

@@ -1,68 +1,95 @@
-import { FC, Fragment } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 
-import Logo from '@modules/common/logo';
-import NavGroup from '@modules/common/nav/navGroup';
+import NavGroup from '@modules/common/Nav/NavGroup';
+import AppContext from '@modules/Layout/Context';
+
+import { useIsHomePage, useMediaQuery } from '@modules/common/hooks';
 
 import data from '@data/data.json';
-import { IIsFullViewProps } from '@utils/types';
-import { devices } from '@styles/theme';
+import { colors, devices } from '@styles/theme';
+import { MOBILE_BREAKPOINT } from '@utils/const';
+import {
+	IIsHomeStylesProps,
+	IIsMobileStylesProps,
+	IIsMobNavStylesProps,
+} from '@utils/types';
 
-export const Container = styled.nav<IIsFullViewProps>`
+type Props = IIsMobNavStylesProps & IIsHomeStylesProps & IIsMobileStylesProps;
+
+export const Container = styled.aside<Props>`
+	${({ isHomeStyles, isMobileStyles, isMobNavStyles }) =>
+		!isHomeStyles && !isMobileStyles
+			? `margin-right: 390px;`
+			: !isHomeStyles && isMobileStyles && !isMobNavStyles
+			? `display: none;`
+			: ``}
+`;
+
+export const Inner = styled.nav<Props>`
 	height: fit-content;
-	${({ isFullView }) =>
-		isFullView
+
+	${({ isHomeStyles }) =>
+		isHomeStyles
 			? `
 		width: fit-content;
 		margin: 150px auto 0;
+
 		${devices.mobile} {
 		margin-top: 80px;
 		}
 		`
-			: `	
+			: `
 		position: fixed;
-		top: 80px;
+		top: 150px;
 		`}
-`;
 
-export const Inner = styled.section<IIsFullViewProps>`
-	${({ isFullView }) =>
-		!isFullView &&
+	${({ isMobNavStyles, isHomeStyles }) =>
+		isMobNavStyles &&
+		!isHomeStyles &&
 		`
-		height: calc(100vh - 240px);
-		overflow-y: scroll;
-		padding-bottom: 30px;
-		
-		::-webkit-scrollbar-thumb {
-		  	background-color: transparent;
-		}
-
-		::-webkit-scrollbar-track-piece {
-			background-color: transparent;
-		}
-		`}
+    top: 0;
+    width: calc(100% + 40px);
+    min-height: 100vh;
+    background-color: ${colors.mainBg};
+    z-index: 5;
+    left: -20px;
+    padding: 96px 40px 20px;
+    
+    ${devices.mobile} {
+        overflow: scroll;
+        height: calc(100% + 6px);
+    }
+	`}
 `;
 
-const Nav: FC<IIsFullViewProps> = ({ isFullView = false }) => {
+const Nav = () => {
+	const isHomeView = useIsHomePage();
+	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
+	const { isMobileNavMode } = useContext(AppContext);
+
 	return (
-		<Container isFullView={isFullView}>
-			{!isFullView && <Logo width={248} height={16} isFullView={isFullView} />}
-			<Inner isFullView={isFullView}>
-				{data.map(
-					(item: any) =>
-						item.list[0].data[0].source.length > 1 && (
-							<Fragment key={item._id}>
+		<>
+			<Container
+				isHomeStyles={isHomeView}
+				isMobileStyles={isMobile}
+				isMobNavStyles={isMobileNavMode}
+			>
+				<Inner isHomeStyles={isHomeView} isMobNavStyles={isMobileNavMode}>
+					{data.map(
+						(item: any) =>
+							item.list[0].data[0].source.length > 1 && (
 								<NavGroup
+									key={item._id}
 									title={item.title}
 									list={item.list}
 									category={item.category}
-									isFullView={isFullView}
 								/>
-							</Fragment>
-						),
-				)}
-			</Inner>
-		</Container>
+							),
+					)}
+				</Inner>
+			</Container>
+		</>
 	);
 };
 
