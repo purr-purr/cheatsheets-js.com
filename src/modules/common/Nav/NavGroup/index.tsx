@@ -1,8 +1,8 @@
 import { FC, useContext } from 'react';
 import styled from 'styled-components';
 
-import AppContext from '@modules/common/context/AppContext';
 import NavItem from '@modules/common/Nav/NavItem';
+import AppContext from 'src/modules/common/context/AppContext';
 
 import { useIsHomePage } from '@modules/common/hooks';
 
