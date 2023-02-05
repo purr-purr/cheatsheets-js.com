@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 
 import NavGroup from '@modules/common/Nav/NavGroup';
-import AppContext from '@modules/Layout/AppContext';
+import AppContext from '@modules/Layout/context';
 
 import { useIsHomePage, useMediaQuery } from '@modules/common/hooks';
 

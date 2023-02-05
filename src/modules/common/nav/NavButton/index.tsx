@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 
-import AppContext from '@modules/Layout/AppContext';
+import AppContext from '@modules/Layout/context';
 
 import { IIsMobNavStylesProps } from '@utils/types';
 

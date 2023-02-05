@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import AppContext from '@modules/Layout/AppContext';
+import AppContext from '@modules/Layout/context';
 
 import { useIsHomePage } from '@modules/common/hooks';
 
