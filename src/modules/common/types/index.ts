@@ -1,4 +1,3 @@
-// category and here
 export interface ICheatsData {
 	_id: number;
 	category: string;
@@ -6,7 +5,6 @@ export interface ICheatsData {
 	list: Array<ICheatsDataList>;
 }
 
-// only here
 export interface ICheatsDataList {
 	title: string;
 	desc?: string;
@@ -16,7 +14,6 @@ export interface ICheatsDataList {
 	}>;
 }
 
-// common
 export interface IIsHomeStylesProps {
 	isHomeStyles: boolean;
 }

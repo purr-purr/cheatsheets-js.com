@@ -15,7 +15,7 @@ import { IIsHomeStylesProps } from '@modules/common/types';
 import { IChildrenProps } from '@modules/layout/types';
 
 export const Container = styled.main<IIsHomeStylesProps>`
-	min-height: calc(100vh - 47px);
+	min-height: calc(100vh - 71px);
 	display: flex;
 	position: relative;
 

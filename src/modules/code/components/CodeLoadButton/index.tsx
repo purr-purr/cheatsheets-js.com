@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 
-import { devices } from '@styles/theme';
+import { devices, transition } from '@styles/theme';
 import messages from '@utils/messages';
 
 export const LoadButtonWrapper = styled.div`
@@ -15,11 +15,21 @@ export const LoadButtonWrapper = styled.div`
 	border-radius: 15px;
 	filter: url('#goo');
 
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		filter: none;
+		${transition('opacity', 0.5)};
+
+		:hover {
+			opacity: 0.8;
+			${transition('opacity', 0.5)};
+		}
+	}
+
 	${devices.mobile} {
 		filter: none;
 
 		:hover {
-			opacity: 0.7;
+			opacity: 0.8;
 		}
 	}
 `;
