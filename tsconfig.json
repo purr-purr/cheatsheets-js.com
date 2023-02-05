@@ -35,9 +35,6 @@
       "@styles/*": [
         "./src/assets/styles/*"
       ],
-      "@images/*": [
-        "./src/assets/images/*"
-      ],
       "@public/*": [
         "./public/*"
       ]

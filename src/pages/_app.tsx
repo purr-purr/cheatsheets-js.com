@@ -2,11 +2,10 @@ import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 
-import Layout from '@modules/Layout';
-
 import * as gtag from '@utils/gtag';
 
 import '@styles/globals.scss';
+import Layout from '@modules/layout/components/Layout';
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter();

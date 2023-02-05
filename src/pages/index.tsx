@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import Logo from '@modules/common/Logo';
-import Meta from '@modules/common/Meta';
+import Logo from '@modules/common/components/Logo';
+import Meta from '@modules/common/components/Meta';
 
 import { useMediaQuery } from '@modules/common/hooks';
 

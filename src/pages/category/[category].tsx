@@ -1,10 +1,10 @@
 import { FC, Fragment, memo, useEffect, useState } from 'react';
-
-import CodeFrame from '@modules/common/CodeFrame';
-import DescriptionText from '@modules/common/DescriptionText';
-import Heading from '@modules/common/Heading';
-import Meta from '@modules/common/Meta';
 import { useRouter } from 'next/router';
+
+import CodeFrame from '@modules/code/components/CodeFrame';
+import DescriptionText from '@modules/common/components/DescriptionText';
+import Heading from '@modules/common/components/Heading';
+import Meta from '@modules/common/components/Meta';
 
 import data from '@data/data.json';
 import { ICheatsData } from '@utils/types';
