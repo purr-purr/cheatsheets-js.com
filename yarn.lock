@@ -2498,7 +2498,7 @@ ssh2-sftp-client@^7.2.1:
     promise-retry "^2.0.1"
     ssh2 "^1.8.0"
 
-ssh2@^1.8.0:
+ssh2@^1.11.0, ssh2@^1.8.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/ssh2/-/ssh2-1.11.0.tgz#ce60186216971e12f6deb553dcf82322498fe2e4"
   integrity sha512-nfg0wZWGSsfUe/IBJkXVll3PEZ//YH2guww+mP88gTpuSU4FtZN7zu9JoeTGOyCNx2dTDtT9fOpWwlzyj4uOOw==
