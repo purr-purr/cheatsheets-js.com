@@ -1,17 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import Logo from '@modules/common/logo';
-import Meta from '@modules/common/meta';
-import {
-	createMetaDescHome,
-	createMetaKeyWords,
-	createMetaTitle,
-} from '@utils/index';
+import Logo from '@modules/common/Logo';
+import Meta from '@modules/common/Meta';
+
+import { useMediaQuery } from '@modules/common/hooks';
 
 import data from '@data/data.json';
-import messages from '@utils/messages';
-import { useMediaQuery } from '@modules/common/hooks';
 import { MOBILE_BREAKPOINT } from '@utils/const';
+import messages from '@utils/messages';
 
 const Home = () => {
 	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
@@ -20,18 +16,17 @@ const Home = () => {
 
 	useEffect(() => {
 		data.map((item: any) => {
-			if (!titlesArr.includes(item.title)) {
+			!titlesArr.includes(item.title) &&
 				setTitlesArr((current) => [...current, item.title]);
-			}
 		});
 	}, []);
 
 	return (
 		<>
 			<Meta
-				title={createMetaTitle(messages.JAVA_SCRIPT)}
-				desc={createMetaDescHome(uniqueTitlesArr)}
-				keyWords={createMetaKeyWords(messages.JAVA_SCRIPT, uniqueTitlesArr)}
+				title={messages.JAVA_SCRIPT}
+				desc={uniqueTitlesArr}
+				keyWords={uniqueTitlesArr}
 			/>
 			<Logo width={isMobile ? 320 : 680} height={isMobile ? 21 : 44} />
 		</>

@@ -35,6 +35,10 @@ export interface IIsHomeStylesProps {
 	isHomeStyles?: boolean;
 }
 
-export interface ICodeFrameProps {
-	isLoading?: boolean;
+export interface IIsMobNavStylesProps {
+	isMobNavStyles: boolean;
+}
+
+export interface IIsMobileStylesProps {
+	isMobileStyles?: boolean;
 }

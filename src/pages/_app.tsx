@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
 
-import Layout from '@modules/layout';
+import Layout from '@modules/Layout';
+
 import * as gtag from '@utils/gtag';
 
 import '@styles/globals.scss';

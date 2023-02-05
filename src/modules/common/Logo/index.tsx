@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,17 +13,7 @@ const Logo: FC<{
 }> = ({ width, height }) => {
 	const isHomeView = useIsHomePage();
 	return (
-		<Link
-			href={'/'}
-			style={
-				!isHomeView
-					? {
-							marginBottom: '150px',
-							display: 'block',
-					  }
-					: undefined
-			}
-		>
+		<Link href={'/'} style={{ display: 'flex', alignItems: 'center' }}>
 			<Image src={LOGO} alt="Logo" width={width} height={height} />
 		</Link>
 	);

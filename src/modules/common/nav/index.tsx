@@ -1,87 +1,95 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 
-import Logo from '@modules/common/logo';
-import NavGroup from '@modules/common/nav/navGroup';
+import NavGroup from '@modules/common/Nav/NavGroup';
+import AppContext from '@modules/Layout/Context';
+
+import { useIsHomePage, useMediaQuery } from '@modules/common/hooks';
 
 import data from '@data/data.json';
-import { IIsHomeStylesProps } from '@utils/types';
-import { devices } from '@styles/theme';
-import { useIsHomePage, useMediaQuery } from '@modules/common/hooks';
+import { colors, devices } from '@styles/theme';
 import { MOBILE_BREAKPOINT } from '@utils/const';
+import {
+	IIsHomeStylesProps,
+	IIsMobileStylesProps,
+	IIsMobNavStylesProps,
+} from '@utils/types';
 
-export const Container = styled.nav<IIsHomeStylesProps>`
+type Props = IIsMobNavStylesProps & IIsHomeStylesProps & IIsMobileStylesProps;
+
+export const Container = styled.aside<Props>`
+	${({ isHomeStyles, isMobileStyles, isMobNavStyles }) =>
+		!isHomeStyles && !isMobileStyles
+			? `margin-right: 390px;`
+			: !isHomeStyles && isMobileStyles && !isMobNavStyles
+			? `display: none;`
+			: ``}
+`;
+
+export const Inner = styled.nav<Props>`
 	height: fit-content;
+
 	${({ isHomeStyles }) =>
 		isHomeStyles
 			? `
 		width: fit-content;
 		margin: 150px auto 0;
+
 		${devices.mobile} {
 		margin-top: 80px;
 		}
 		`
-			: `	
+			: `
 		position: fixed;
-		top: 80px;
+		top: 150px;
 		`}
-`;
 
-export const Inner = styled.div<IIsHomeStylesProps>`
-	${({ isHomeStyles }) =>
+	${({ isMobNavStyles, isHomeStyles }) =>
+		isMobNavStyles &&
 		!isHomeStyles &&
 		`
-		height: calc(100vh - 240px);
-		overflow-y: scroll;
-		padding-bottom: 30px;
-		
-		::-webkit-scrollbar-thumb {
-		  	background-color: transparent;
-		}
-
-		::-webkit-scrollbar-track-piece {
-			background-color: transparent;
-		}
-		`}
+    top: 0;
+    width: calc(100% + 40px);
+    min-height: 100vh;
+    background-color: ${colors.mainBg};
+    z-index: 5;
+    left: -20px;
+    padding: 96px 40px 20px;
+    
+    ${devices.mobile} {
+        overflow: scroll;
+        height: calc(100% + 6px);
+    }
+	`}
 `;
-
-export const Button = styled.button``;
 
 const Nav = () => {
 	const isHomeView = useIsHomePage();
 	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
-	const [showNav, setShowNav] = useState(true);
-	const openNav = () => {
-		setShowNav(true);
-	};
-
-	useEffect(() => {
-		isMobile ? setShowNav(false) : setShowNav(true);
-	}, [isMobile]);
+	const { isMobileNavMode } = useContext(AppContext);
 
 	return (
-		<Container isHomeStyles={isHomeView}>
-			{isMobile && !isHomeView && <Button onClick={openNav}>open menu</Button>}
-			{showNav && (
-				<>
-					{!isHomeView && <Logo width={248} height={16} />}
-					<Inner isHomeStyles={isHomeView}>
-						{data.map(
-							(item: any) =>
-								item.list[0].data[0].source.length > 1 && (
-									<Fragment key={item._id}>
-										<NavGroup
-											title={item.title}
-											list={item.list}
-											category={item.category}
-										/>
-									</Fragment>
-								),
-						)}
-					</Inner>
-				</>
-			)}
-		</Container>
+		<>
+			<Container
+				isHomeStyles={isHomeView}
+				isMobileStyles={isMobile}
+				isMobNavStyles={isMobileNavMode}
+			>
+				<Inner isHomeStyles={isHomeView} isMobNavStyles={isMobileNavMode}>
+					{data.map(
+						(item: any) =>
+							item.list[0].data[0].source.length > 1 && (
+								<NavGroup
+									key={item._id}
+									title={item.title}
+									list={item.list}
+									category={item.category}
+								/>
+							),
+					)}
+				</Inner>
+			</Container>
+		</>
 	);
 };
 

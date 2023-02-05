@@ -50,7 +50,7 @@ body {
   margin-right: auto;
   padding-left: 60px;
   padding-right: 60px;
-  
+
   @media (max-width: $mobile-bp) {
     padding-left: 20px;
     padding-right: 20px;
@@ -72,4 +72,9 @@ button {
 p {
   font-size: 16px;
   line-height: 20px;
+
+  @media (max-width: $mobile-bp) {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }

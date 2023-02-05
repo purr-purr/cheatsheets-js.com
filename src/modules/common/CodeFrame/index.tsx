@@ -1,11 +1,11 @@
 import { FC, useState } from 'react';
 import styled from 'styled-components';
 
-import Poster from '@modules/common/poster';
-import { fixSandboxLink } from '@utils/index';
-import { ICodeFrameProps } from '@utils/types';
+import Poster from '@modules/common/Poster';
 
+import { devices } from '@styles/theme';
 import { CODE_FRAME_ALLOW_ATTR, CODE_FRAME_SANDBOX_ATTR } from '@utils/const';
+import { fixSandboxLink } from '@utils/index';
 
 export const Container = styled.article`
 	position: relative;
@@ -14,9 +14,13 @@ export const Container = styled.article`
 	margin-bottom: 48px;
 	border-radius: 10px;
 	overflow: hidden;
+
+	${devices.mobile} {
+		height: 400px;
+	}
 `;
 
-export const Frame = styled.iframe<ICodeFrameProps>`
+export const Frame = styled.iframe<{ isLoading?: boolean }>`
 	border-radius: 4px;
 	border: 1px solid transparent;
 	overflow: hidden;

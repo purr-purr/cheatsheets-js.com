@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+
 import Link from 'next/link';
 
-import messages from '@utils/messages';
-import { APP_AUTHOR, CONTACT_LINK } from '@utils/const';
 import { transition } from '@styles/theme';
+import { APP_AUTHOR, CONTACT_LINK } from '@utils/const';
+import messages from '@utils/messages';
 
 export const FooterContainer = styled.footer`
 	height: 47px;
