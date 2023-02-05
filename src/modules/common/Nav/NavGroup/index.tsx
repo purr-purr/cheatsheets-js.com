@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import styled from 'styled-components';
 
-import AppContext from '@modules/common/context';
+import AppContext from '@modules/common/context/AppContext';
 import NavItem from '@modules/common/Nav/NavItem';
 
 import { useIsHomePage } from '@modules/common/hooks';

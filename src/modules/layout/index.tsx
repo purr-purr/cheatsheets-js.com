@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import AppContext from '@modules/common/context';
+import AppContext from '@modules/common/context/AppContext';
 import Nav from '@modules/common/Nav';
 import Footer from '@modules/Layout/Footer';
 import Header from '@modules/Layout/Header';
