@@ -79,7 +79,7 @@ const Nav = () => {
 			>
 				<Inner isHomeStyles={isHomeView} isMobNavStyles={isMobileNavMode}>
 					{data.map(
-						(item: any) =>
+						(item) =>
 							item.list[0].data[0].source.length > 1 && (
 								<NavGroup
 									key={item._id}

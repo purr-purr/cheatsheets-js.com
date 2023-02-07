@@ -82,7 +82,7 @@ const NavGroup: FC<INavGroupProps> = ({ title, list, category }) => {
 			<Heading isHomeStyles={isHomeView}>{title}</Heading>
 			<List isHomeStyles={isHomeView}>
 				{list.map(
-					(item: any) =>
+					(item) =>
 						item.data[0].source.length > 1 && (
 							<NavItem
 								key={item.title}

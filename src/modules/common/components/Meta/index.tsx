@@ -13,8 +13,8 @@ import LOGO from '@public/assets/logo.svg';
 
 const Meta: FC<{
 	title: string;
-	desc: string | any[];
-	keyWords: any[];
+	desc: string | string[];
+	keyWords: string[];
 }> = ({ title, desc, keyWords }) => {
 	const manifestPath = '/assets/manifest.webmanifest';
 	const metaTitle = formatMetaTitle(title);

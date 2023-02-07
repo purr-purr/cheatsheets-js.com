@@ -50,6 +50,15 @@
         ]
       },
       {
+        "title": "If Else & Switch Statement",
+        "desc": "Conditional statements are used to perform different actions based on different conditions.",
+        "data": [
+          {
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-if-else-switch-rpwpj1"
+          }
+        ]
+      },
+      {
         "title": "Regular Expressions",
         "desc": "Use RegEx to define a search pattern.",
         "data": [
@@ -69,9 +78,10 @@
       },
       {
         "title": "Local Storage",
+        "desc": "localStorage is a property that allows JavaScript sites and apps to save key-value pairs in a web browser with no expiration date. This means the data stored in the browser will persist even after the browser window is closed.",
         "data": [
           {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-localstorage-uwgc9g"
           }
         ]
       },
@@ -101,6 +111,32 @@
         ]
       },
       {
+        "title": "Dates",
+        "data": [
+          {
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-current-dates-kivdq1"
+          }
+        ]
+      },
+      {
+        "title": "Errors handle",
+        "desc": "When executing JavaScript code, different errors can occur.\n\nErrors can be coding errors made by the programmer, errors due to wrong input, and other unforeseeable things.",
+        "data": [
+          {
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-errors-wi1po0"
+          }
+        ]
+      },
+      {
+        "title": "Loops",
+        "desc": "Most programming languages allow to work with loops, which help in executing one or more statements up to a desired number of times. Find the \"for\" and \"while\" loop syntax in this section.",
+        "data": [
+          {
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-js-loops-n8tc9s"
+          }
+        ]
+      },
+      {
         "title": "Classes",
         "desc": "Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are unique to classes.",
         "data": [
@@ -118,10 +154,10 @@
     "list": [
       {
         "title": "Components",
-        "desc": "Arrays desc",
+        "desc": "Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.",
         "data": [
           {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-react-component-init-z08moz"
           }
         ]
       },
@@ -136,7 +172,16 @@
       },
       {
         "title": "Hooks",
-        "desc": "Numbers desc",
+        "desc": "With Hooks, you can extract stateful logic from a component so it can be tested independently and reused. Hooks allow you to reuse stateful logic without changing your component hierarchy. This makes it easy to share Hooks among many components or with the community.",
+        "data": [
+          {
+            "subtitle": "> useState()",
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-react-usestate-fv73nq"
+          }
+        ]
+      },
+      {
+        "title": "Custom Hooks",
         "data": [
           {
             "source": "/"
@@ -144,10 +189,10 @@
         ]
       },
       {
-        "title": "Lazy load & dynamic imports",
+        "title": "JSX patterns",
         "data": [
           {
-            "source": "/"
+            "source": "https://codesandbox.io/s/cheatsheets-js-com-react-jsx-nft9mm"
           }
         ]
       }

@@ -5,7 +5,7 @@ import NavButton from '@modules/nav/components/NavBurgerButton';
 
 import { useIsHomePage, useMediaQuery } from '@modules/common/hooks';
 
-import { colors } from '@styles/theme';
+import { colors, devices } from '@styles/theme';
 import { MOBILE_BREAKPOINT } from '@utils/const';
 
 export const HeaderContainer = styled.header`
@@ -16,7 +16,10 @@ export const HeaderContainer = styled.header`
 	align-items: center;
 	height: 70px;
 	width: calc(100% - 40px);
-	background-color: ${colors.mainBg};
+
+	${devices.mobile} {
+		background-color: ${colors.mainBg};
+	}
 `;
 
 const Header = () => {

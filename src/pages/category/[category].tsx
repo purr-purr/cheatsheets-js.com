@@ -29,15 +29,15 @@ const Category: FC = memo(() => {
 
 	useEffect(() => {
 		if (!router.isReady) return;
-		data.map((item: any) => item.category === category && setPageData(item));
+		data.map((item) => item.category === category && setPageData(item));
 	}, [router.query.category, router.isReady]);
 
-	const [titlesArr, setTitlesArr] = useState<any[]>([]);
+	const [titlesArr, setTitlesArr] = useState<string[]>([]);
 
 	useEffect(() => {
 		if (pageData._id !== 0) {
 			pageData.list.map(
-				(item: any) =>
+				(item) =>
 					!titlesArr.includes(item.title) &&
 					setTitlesArr((current) => [...current, item.title]),
 			);

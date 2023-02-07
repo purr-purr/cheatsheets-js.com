@@ -92,9 +92,13 @@ const NavItem: FC<INavPageItemProps> = ({ title, path }) => {
 	const { handleMobileNavMode } = useContext(Index);
 
 	const getIconPath = (iconName: string) => {
-		return require(`@modules/nav/assets/navItem/navItem_icon-${formatToAttr(
-			iconName,
-		)}.png`);
+		try {
+			return require(`@modules/nav/assets/navItem/navItem_icon-${formatToAttr(
+				iconName,
+			)}.png`);
+		} catch (err) {
+			return require(`@modules/nav/assets/navItem/navItem_icon-universal.png`);
+		}
 	};
 
 	useEffect(() => {
