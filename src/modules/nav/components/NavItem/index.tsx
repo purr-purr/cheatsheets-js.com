@@ -27,9 +27,9 @@ export const ListItem = styled.li<IIsHomeStylesProps>`
 		transform: scale(1.05);
 		${transition('transform', 0.5)};
 
-		p:after {
-			width: 100%;
-			${transition('width', 0.5)};
+		p {
+			opacity: 0.6;
+			${transition('opacity', 0.5)};
 		}
 	}
 
@@ -51,19 +51,7 @@ export const ListItem = styled.li<IIsHomeStylesProps>`
 
 export const Title = styled.p<IIsHomeStylesProps>`
 	font-weight: 500;
-	position: relative;
-
 	${({ isHomeStyles }) => isHomeStyles && `margin-top: 4px;`}
-	:after {
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 0;
-		height: 1px;
-		background-color: ${colors.mainBlack};
-		${transition('width', 0.5)};
-	}
 `;
 
 export const LinkInner = styled.a<IIsHomeStylesProps>`

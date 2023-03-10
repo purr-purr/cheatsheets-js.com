@@ -6,7 +6,7 @@
     "list": [
       {
         "title": "String",
-        "desc": "Learn how to work with JS strings and find the most common functions to work with this data type.",
+        "desc": "In JavaScript, a string is a sequence of characters used to represent text. Strings can be created using single or double quotes and can contain letters, numbers, and symbols. They are manipulated using built-in methods such as concat(), indexOf(), slice(), and replace(). Strings are immutable, but you can create a new string with the modified version of the original. Strings are essential for any JavaScript programmer.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-string-mr57eh"
@@ -15,7 +15,7 @@
       },
       {
         "title": "Numbers",
-        "desc": "Work with JS numbers, predefined constants and perform math functions.",
+        "desc": "JavaScript numbers represent numerical data and can be integers or floating-point numbers. You can use built-in mathematical functions to perform operations on numbers and comparison operators to compare them.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-numbers-methods-2bstbq"
@@ -24,7 +24,7 @@
       },
       {
         "title": "Arrays",
-        "desc": "Learn how to organize your variables in vectors and how to use them.",
+        "desc": "JavaScript arrays store collections of data using square brackets and can contain any number of elements separated by commas. They have many built-in methods, such as push(), pop(), shift(), and unshift(), to manipulate their contents.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-array-methods-f4h4ut"
@@ -33,7 +33,7 @@
       },
       {
         "title": "Objects",
-        "desc": "The Object type represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities.",
+        "desc": "JavaScript objects store data in a structured way using curly braces. They contain properties (key-value pairs) that store data and methods that define behavior. Objects are a fundamental feature of JavaScript and are used extensively in programming.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-object-wz2iud"
@@ -42,7 +42,7 @@
       },
       {
         "title": "Functions",
-        "desc": "Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output. To use a function, you must define it somewhere in the scope from which you wish to call it.",
+        "desc": "JavaScript functions are blocks of code that can be executed by name. They take input (known as parameters), perform operations on that input, and return a value (or perform a task). Functions can be defined using the 'function' keyword or created as anonymous functions. They are a fundamental feature of JavaScript and are used extensively in programming.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-functions-18vz9e"
@@ -51,7 +51,7 @@
       },
       {
         "title": "If Else & Switch Statement",
-        "desc": "Conditional statements are used to perform different actions based on different conditions.",
+        "desc": "In JavaScript, 'if' statements execute a block of code if a condition is true. else statements can be used to execute a different block of code if the condition is false. These statements allow for conditional logic in JavaScript code, allowing for different actions to be taken based on different conditions. They are a fundamental feature of JavaScript and are used extensively in programming.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-if-else-switch-rpwpj1"
@@ -60,7 +60,7 @@
       },
       {
         "title": "Regular Expressions",
-        "desc": "Use RegEx to define a search pattern.",
+        "desc": "JavaScript Regular Expressions (also known as \"regex\" or \"RegExp\" for short) are patterns used to match and manipulate text. They are written using a combination of characters and special symbols, which define the rules for the pattern matching. Regular expressions are commonly used in JavaScript for tasks such as string searching, replacing, and validation. They can be used with various methods in JavaScript, such as match(), test(), replace(), and split(), to perform these tasks on strings of text.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-regex-6vyo79?file=/src/index.js"
@@ -69,7 +69,7 @@
       },
       {
         "title": "setTimeout & setInterval",
-        "desc": "The global setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires. The setInterval() method, offered on the Window and Worker interfaces, repeatedly calls a function or executes a code snippet, with a fixed time delay between each call.",
+        "desc": "JavaScript's setTimeout and setInterval are methods used to delay the execution of a function or to repeatedly execute a function at a set interval. setTimeout is used to execute a function after a specified amount of time has passed, while setInterval is used to execute a function repeatedly at a set interval. Both methods take two arguments: a function to execute and a delay time in milliseconds. The setTimeout method will execute the function once after the specified delay time has elapsed, while the setInterval method will execute the function repeatedly at the specified interval until it is cleared using the clearInterval method. These methods are commonly used in JavaScript for animations, countdown timers, and other time-based functions.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-settimeout-and-setinterval-rfg12e"
@@ -78,7 +78,7 @@
       },
       {
         "title": "Local Storage",
-        "desc": "localStorage is a property that allows JavaScript sites and apps to save key-value pairs in a web browser with no expiration date. This means the data stored in the browser will persist even after the browser window is closed.",
+        "desc": "JavaScript Local Storage is a tool that allows web apps to store data locally within a user's browser using a simple key-value storage system accessible with JavaScript. It's useful for storing small amounts of non-sensitive data, persisting even after the user leaves the page or closes the browser. It has a limit of 5-10 MB depending on the browser.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-localstorage-uwgc9g"
@@ -95,7 +95,7 @@
       },
       {
         "title": "Getter & Setter",
-        "desc": "The get syntax binds an object property to a function that will be called when that property is looked up. The set syntax binds an object property to a function to be called when there is an attempt to set that property. It can also be used in classes.",
+        "desc": "JavaScript Getter and Setter are two special methods that allow you to define custom behavior when reading and writing object properties. A Getter is a method that gets the value of a property, while a Setter is a method that sets the value of a property. They can be used to create more secure, controlled and flexible access to object properties.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-getter-and-setter-shkikr"
@@ -112,6 +112,7 @@
       },
       {
         "title": "Dates",
+        "desc": "JavaScript Dates are a data type that represents a date and time value in JavaScript. They provide a set of methods to manipulate dates, perform arithmetic operations on dates, and format dates into human-readable strings. JavaScript Dates are based on the Unix timestamp, which is the number of milliseconds that have elapsed since January 1, 1970, 00:00:00 UTC. They can be used for a variety of tasks, such as scheduling events, tracking time-based metrics, and displaying dates and times in web applications.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-current-dates-kivdq1"
@@ -120,7 +121,7 @@
       },
       {
         "title": "Errors handle",
-        "desc": "When executing JavaScript code, different errors can occur.\n\nErrors can be coding errors made by the programmer, errors due to wrong input, and other unforeseeable things.",
+        "desc": "In JavaScript, Errors are objects that represent exceptional conditions that occur during program execution. To handle errors in JavaScript, you can use the try-catch statement. The try block contains the code that might throw an error, while the catch block contains the code that handles the error if it occurs. When an error is thrown, JavaScript stops executing the code in the try block and jumps to the corresponding catch block, passing the error object as a parameter. You can then handle the error by logging it, displaying an error message to the user, or taking any other appropriate action.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-errors-wi1po0"
@@ -129,7 +130,7 @@
       },
       {
         "title": "Loops",
-        "desc": "Most programming languages allow to work with loops, which help in executing one or more statements up to a desired number of times. Find the \"for\" and \"while\" loop syntax in this section.",
+        "desc": "JavaScript Loops are used to execute a block of code repeatedly until a certain condition is met. There are three types of loops in JavaScript: the for loop, the while loop, and the do-while loop. The for loop is used to execute a block of code a fixed number of times. The while loop is used to execute a block of code as long as a condition is true. The do-while loop is similar to the while loop, but it guarantees that the block of code will be executed at least once before checking the condition. Loops are an essential tool for automating repetitive tasks in JavaScript, such as iterating over arrays or performing calculations on a set of numbers.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-loops-n8tc9s"
@@ -138,7 +139,7 @@
       },
       {
         "title": "Classes",
-        "desc": "Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are unique to classes.",
+        "desc": "JavaScript Classes are a way to define a blueprint for creating objects with shared properties and methods. They are introduced in ES6 and are based on the class-based object-oriented programming paradigm. A class in JavaScript is defined using the class keyword and can contain a constructor method, which is called when an object is created from the class. You can also define methods and properties that are shared among all objects created from the class. Classes provide a more organized and intuitive way to create objects with similar characteristics, making code more modular, reusable, and easier to maintain.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-js-classes-yziuzk"
@@ -154,7 +155,7 @@
     "list": [
       {
         "title": "Components",
-        "desc": "Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.",
+        "desc": "ReactJS Components are the building blocks of React applications, which are reusable pieces of UI that contain logic, styling, and functionality. They can be created using either classes or functions and can be classified as either functional components or class components. Functional components are simpler, stateless components that receive data as input and return JSX elements as output. Class components are more complex, stateful components that can have internal state and lifecycle methods, in addition to receiving data as props. Components can be composed together to create larger, more complex UIs, and can be reused across multiple parts of an application.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-react-component-init-z08moz"
@@ -172,7 +173,7 @@
       },
       {
         "title": "Hooks",
-        "desc": "With Hooks, you can extract stateful logic from a component so it can be tested independently and reused. Hooks allow you to reuse stateful logic without changing your component hierarchy. This makes it easy to share Hooks among many components or with the community.",
+        "desc": "ReactJS Hooks are functions that allow you to use state and other React features in functional components. They were introduced in React 16.8 as a way to use state and lifecycle methods without writing class components. Some of the most commonly used hooks are useState, useEffect, useContext, and useRef. useState is used to manage state in a functional component, useEffect is used to perform side effects and update the component based on changes in state or props, useContext is used to share data across the component tree, and useRef is used to reference DOM elements or store mutable values across renders. Hooks provide a cleaner, more concise way to manage state and other features in functional components, making React code more modular, reusable, and easier to understand.",
         "data": [
           {
             "subtitle": "> useState()",
@@ -190,6 +191,7 @@
       },
       {
         "title": "JSX patterns",
+        "desc": "ReactJS JSX is a syntax extension that allows you to write HTML-like code in JavaScript. It is a combination of JavaScript and HTML that lets you define the structure and content of React components in a more intuitive and concise way. JSX is not a separate language or template engine, but rather a syntax extension that gets transpiled into regular JavaScript by a compiler like Babel. JSX can include JavaScript expressions, which are enclosed in curly braces, allowing you to dynamically generate content and styles based on the component's state or props. JSX makes it easier to write and reason about React components, and is now considered the standard way of writing React components.",
         "data": [
           {
             "source": "https://codesandbox.io/s/cheatsheets-js-com-react-jsx-nft9mm"

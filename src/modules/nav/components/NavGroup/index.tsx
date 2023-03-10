@@ -45,6 +45,7 @@ export const Heading = styled.summary<IIsHomeStylesProps>`
 	width: fit-content;
 	margin-right: auto;
 	pointer-events: none;
+	padding-left: 15px;
 
 	&::marker,
 	&::-webkit-details-marker {
@@ -60,6 +61,8 @@ export const List = styled.ul<IIsHomeStylesProps>`
 	display: flex;
 	flex-direction: column;
 	margin-top: 16px;
+	padding-left: 15px;
+	padding-right: 15px;
 
 	${({ isHomeStyles }) =>
 		isHomeStyles &&
