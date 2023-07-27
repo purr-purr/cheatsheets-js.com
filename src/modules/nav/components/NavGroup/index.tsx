@@ -56,7 +56,6 @@ export const Heading = styled.summary<IIsHomeStylesProps>`
 `;
 
 export const List = styled.ul<IIsHomeStylesProps>`
-	list-style-type: none;
 	gap: 16px;
 	display: flex;
 	flex-direction: column;
